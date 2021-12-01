@@ -89,7 +89,7 @@ const Portfolio = () => {
                             className="flex flex-row items-start justify-start relative w-full h-full "
                         >
                             <iframe
-                                src="https://player.vimeo.com/video/648284994"
+                                src={project.acf.vimeo}
                                 width="1140"
                                 height="520"
                                 frameborder="0"

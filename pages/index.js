@@ -1,11 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
 // import Footer from "../components/Footer";
+import useSWR from "swr";
 
 import Slider2 from "../components/Slider2";
 import Footer from "../components/Footer";
 
-const Home = ({ data }) => {
+const Home = () => {
+    const fetcher = (url) => fetch(url).then((res) => res.json());
+    const { data, error } = useSWR(
+        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
+        fetcher,
+    );
     return (
         <>
             <motion.div
@@ -33,15 +39,4 @@ const Home = ({ data }) => {
     );
 };
 
-export const getStaticProps = async (ctx) => {
-    const res = await fetch(
-        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
-    );
-    const data = await res.json();
-    return {
-        props: {
-            data,
-        },
-    };
-};
 export default Home;

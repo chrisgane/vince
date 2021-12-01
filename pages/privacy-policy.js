@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React from "react";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-import { useTheme } from "../components/ThemeContext";
-import Link from "next/link";
 import Footer from "../components/Footer";
-// import { Parallax } from "react-parallax";
-import {
-    ParallaxProvider,
-    Parallax,
-    ParallaxBanner,
-} from "react-scroll-parallax";
 
 const html = `
 <div class="wpb_wrapper">
@@ -91,10 +83,7 @@ BY USING OUR WEBSITE, YOU CONSENT TO THE RELEVANT COOKIES BEING SET ON YOUR DEVI
 <p>The Website may also link through to third party websites which may use cookies which we have no control over. We therefore recommend that you check the relevant third party privacy policies for information about any cookies that they may use.</p>
 
 		</div>`;
-const About = ({ data }) => {
-    const router = useRouter();
-    // const { darkTheme } = useTheme();
-
+const About = () => {
     return (
         <motion.div
             initial={{
@@ -119,19 +108,6 @@ const About = ({ data }) => {
             <Footer />
         </motion.div>
     );
-};
-
-export const getStaticProps = async (ctx) => {
-    const res = await fetch(
-        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/132",
-    );
-    const data = await res.json();
-    console.log(data);
-    return {
-        props: {
-            data,
-        },
-    };
 };
 
 export default About;

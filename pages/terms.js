@@ -1,15 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
-import { useTheme } from "../components/ThemeContext";
-import Link from "next/link";
+import React from "react";
+import { motion } from "framer-motion";
+
 import Footer from "../components/Footer";
-// import { Parallax } from "react-parallax";
-import {
-    ParallaxProvider,
-    Parallax,
-    ParallaxBanner,
-} from "react-scroll-parallax";
 
 const html = `
 <div class="wpb_wrapper">
@@ -99,9 +91,6 @@ Our site is for private and non-commercial use only. You agree not to use our si
 
 		</div>`;
 const About = ({ data }) => {
-    const router = useRouter();
-    // const { darkTheme } = useTheme();
-
     return (
         <motion.div
             initial={{
@@ -126,19 +115,6 @@ const About = ({ data }) => {
             <Footer />
         </motion.div>
     );
-};
-
-export const getStaticProps = async (ctx) => {
-    const res = await fetch(
-        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/132",
-    );
-    const data = await res.json();
-    console.log(data);
-    return {
-        props: {
-            data,
-        },
-    };
 };
 
 export default About;

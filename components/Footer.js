@@ -64,8 +64,9 @@ const Footer = () => {
                             Vince is always looking for exceptional individuals
                             in the field of content creation; producers,
                             directors, dops and mograph ops - so why not give us
-                            a shout at ku.oc.ecniv@drowaevah with your cover
-                            letter and CV. Thanks!
+                            a shout at{" "}
+                            <Obfuscate email="haveword@vince.co.uk" /> with your
+                            cover letter and CV. Thanks!
                         </p>
                     </div>
                 </div>

@@ -61,7 +61,7 @@ const Search = () => {
                 },
             }}
         >
-            <div className=" w-full flex flex-col justify-center items-center  px-5 py-20">
+            <div className=" w-full flex flex-col justify-center items-center  px-5 py-40">
                 {searchLoading && (
                     <div className="text-4xl absolute top-1/2  -translate-x-1/2 -translate-y-1/2 animate-spin">
                         <ImSpinner4 />

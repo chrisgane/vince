@@ -98,22 +98,15 @@ const Portfolio = () => {
                                 allowfullscreen
                                 autoplay
                             ></iframe>
-
-                            {loading && (
-                                <div className="text-4xl absolute top-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin">
-                                    <ImSpinner4 />
-                                </div>
-                            )}
                         </motion.div>
                     )}
 
                     {project && project.acf?.content && (
                         <motion.div
-                            initial={{ opacity: 0, y: -20 }}
+                            initial={{ opacity: 0 }}
                             animate={{
                                 opacity: 1,
-                                y: 0,
-                                transition: { delay: 0.5, duration: 0.3 },
+                                transition: { delay: 1, duration: 0.3 },
                             }}
                             className=" text-lg -mt-16 sm:-mt-4 md:mt-10"
                             dangerouslySetInnerHTML={{
@@ -123,10 +116,25 @@ const Portfolio = () => {
                     )}
                 </motion.div>
             </motion.div>
-            <h2 className="text-center font-light text-3xl mt-24 mb-10">
+
+            <motion.h2
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: 1,
+                    transition: { delay: 1, duration: 0.3 },
+                }}
+                className="text-center font-light text-3xl mt-24 mb-10"
+            >
                 More projects
-            </h2>
-            <div className="grid grid-cols-1 w-full  md:grid-cols-2 lg:grid-cols-3  gap-y-16  px-6 md:px-12 lg:px-40 pb-20">
+            </motion.h2>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: 1,
+                    transition: { delay: 1, duration: 0.3 },
+                }}
+                className="grid grid-cols-1 w-full  md:grid-cols-2 lg:grid-cols-3  gap-y-16  px-6 md:px-12 lg:px-40 pb-20"
+            >
                 {data &&
                     data
                         .sort(function (a, b) {
@@ -169,7 +177,7 @@ const Portfolio = () => {
                                 </a>
                             </Link>
                         ))}
-            </div>
+            </motion.div>
             <Footer />
         </>
     );

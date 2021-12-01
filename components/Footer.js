@@ -4,7 +4,7 @@ import Logo from "./Logo";
 import SearchFormFooter from "./SearchFormFooter";
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
-
+import { motion } from "framer-motion";
 const Footer = () => {
     const router = useRouter();
     const socials = [
@@ -20,7 +20,11 @@ const Footer = () => {
     ];
     const headerStyle = "font-black text-3xl text-white mb-12";
     return (
-        <div className="w-full bg-black  text-white">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, transition: { duration: 1 } }}
+            className="w-full bg-black  text-white"
+        >
             <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 py-20">
                 <div>
                     <p className={headerStyle}>Site map</p>
@@ -90,7 +94,7 @@ const Footer = () => {
                     ))}
                 </ul>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

@@ -36,7 +36,6 @@ const Featured = () => {
                             <Link
                                 prefetch={false}
                                 href={`/work/${project.slug}/?id=${project.id}`}
-                                scroll={false}
                             >
                                 <div className=" w-full h-full cursor-pointer ">
                                     <img src={project.acf.image} />
@@ -59,7 +58,6 @@ const Featured = () => {
                         <Link
                             prefetch={false}
                             href={`/work/${project.slug}/?id=${project.id}`}
-                            scroll={false}
                         >
                             <a>
                                 <div className="flex flex-col justify-center  ">

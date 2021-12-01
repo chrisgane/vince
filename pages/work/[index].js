@@ -6,6 +6,7 @@ import Link from "next/link";
 import Footer from "@/components/Footer";
 import useSWR from "swr";
 // import { VimeoPlayer } from "react-video-players";
+import Vimeo from "@u-wave/react-vimeo";
 
 import { ImSpinner4 } from "react-icons/im";
 import { BsArrowDown } from "react-icons/bs";
@@ -88,7 +89,7 @@ const Portfolio = () => {
                             className="flex flex-row items-start justify-start relative w-full h-full "
                         >
                             <iframe
-                                src="https://player.vimeo.com/video/552398689"
+                                src="https://player.vimeo.com/video/648284994"
                                 width="1140"
                                 height="520"
                                 frameborder="0"
@@ -97,6 +98,7 @@ const Portfolio = () => {
                                 allowfullscreen
                                 autoplay
                             ></iframe>
+
                             {loading && (
                                 <div className="text-4xl absolute top-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin">
                                     <ImSpinner4 />
@@ -130,7 +132,7 @@ const Portfolio = () => {
                         .sort(function (a, b) {
                             return 0.5 - Math.random();
                         })
-                        .slice(0, 6)
+                        .slice(0, 3)
                         .map((project) => (
                             <Link
                                 href={`/work/${project.slug}/?id=${project.id}`}

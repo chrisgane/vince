@@ -19,7 +19,6 @@ const Navbar = () => {
             }`}
             onClick={() => setMenuOpen(!menuOpen)}
         >
-            {!menuOpen ? "Menu" : "Close"}
             {menuOpen ? (
                 <VscChromeClose className="ml-2 text-2xl lg:text-4xl" />
             ) : (

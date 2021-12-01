@@ -67,7 +67,7 @@ p {
 }
 
 .content img {
-    @apply my-10;
+    @apply my-10 mx-auto;
 }
 .content a {
     @apply my-2 font-bold;
@@ -191,7 +191,11 @@ p {
 
 .carousel .control-next.control-arrow:before {
     border-left: none !important ;
-    content: "Next project " !important;
+    content: "Next " !important;
+}
+.carousel .control-prev.control-arrow:before {
+    border-right: none !important ;
+    content: "Prev" !important;
 }
 
 .carousel.carousel-slider .control-arrow:hover {
@@ -203,7 +207,4 @@ p {
     .carousel.carousel-slider .control-arrow:before {
         display: none !important;
     }
-}
-.slideProper {
-    // height: 500px;
 }

@@ -16,7 +16,7 @@ const Footer = () => {
         { name: "Work", url: "/work" },
         { name: "About", url: "/about" },
         { name: "Privacy policy", url: "/privacy-policy" },
-        { name: "Terms of use", url: "/terms-of-use" },
+        { name: "Terms of use", url: "/terms" },
     ];
     const headerStyle = "font-black text-3xl text-white mb-12";
     return (

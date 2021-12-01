@@ -8,6 +8,7 @@
         "start": "next start"
     },
     "dependencies": {
+        "@u-wave/react-vimeo": "^0.9.5",
         "framer-motion": "4.1.17",
         "gsap": "3.7.1",
         "next": "11.0.0",

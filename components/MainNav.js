@@ -14,7 +14,7 @@ const MainNav = () => {
 
     return (
         <motion.ul
-            className="text-white font-extrabold uppercase text-base md:text-4xl z-30  "
+            className="text-white  uppercase text-base md:text-3xl z-30  "
             initial={{ opacity: 0, y: 30 }}
             animate={{
                 opacity: 1,
@@ -34,9 +34,8 @@ const MainNav = () => {
         >
             {links.map((link) => (
                 <motion.li
-                    whileHover={{ scale: 1.04 }}
                     whileTap={{ scale: 0.9 }}
-                    className="mb-4 md:mb-8 "
+                    className="mb-4 md:mb-6 hover:underline  font-semibold border-gray-100 tracking-wider transition duration-100"
                     key={link.name}
                     onClick={() => setMenuOpen(false)}
                 >

@@ -6,6 +6,7 @@ import { AnimatePresence } from "framer-motion";
 import Router, { useRouter } from "next/router";
 import Layout from "../components/Layout.js";
 import { ThemeProvider } from "../components/ThemeContext.js";
+import NextNprogress from "nextjs-progressbar";
 
 // function handleExitComplete() {
 //     if (typeof window !== "undefined") {
@@ -18,6 +19,13 @@ function MyApp({ Component, pageProps }) {
     return (
         <ThemeProvider>
             <Layout>
+                <NextNprogress
+                    color="black"
+                    startPosition={0.3}
+                    stopDelayMs={200}
+                    height={5}
+                    showOnShallow={true}
+                />
                 <AnimatePresence
                     exitBeforeEnter
                     // onExitComplete={handleExitComplete}

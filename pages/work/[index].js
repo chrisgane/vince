@@ -59,7 +59,7 @@ const Portfolio = () => {
                 }}
             >
                 <motion.div
-                    className="w-full  px-4 md:px-6 lg:px-10 xl:px-12 pt-24 h-auto  flex flex-col items-center max-w-5xl justify-center  mx-auto  min-h-screen"
+                    className="w-full  px-4 md:px-6 lg:px-10 xl:px-12 pt-12 md:pt-16 h-auto  flex flex-col items-center max-w-5xl justify-center  mx-auto  min-h-screen"
                     exit={{
                         opacity: 0,
                         y: -20,

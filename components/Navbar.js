@@ -9,9 +9,7 @@ import Hamburger from "./Hamburger";
 const Navbar = () => {
     const { menuOpen } = useTheme();
     return (
-        <div
-            className={` w-full  flex items-center justify-center  p-6  z-30 `}
-        >
+        <div className={` w-full  flex items-center justify-center  p-6  z-30`}>
             <Logo />
             <Hamburger />
         </div>

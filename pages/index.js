@@ -27,7 +27,7 @@ const Home = () => {
                 exit={{
                     opacity: 0,
                 }}
-                className="pt-24 pb-16 "
+                className="pt-12 md:pt-16 pb-16 "
             >
                 <h1 className="text-center  font-normal text-2xl md:text-4xl mt-1 px-4 ">
                     {data?.acf?.main_header && data.acf.main_header}

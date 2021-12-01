@@ -5,12 +5,14 @@ import SearchFormFooter from "./SearchFormFooter";
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Obfuscate from "react-obfuscate";
+
 const Footer = () => {
     const router = useRouter();
     const socials = [
         { name: "Facebook", url: "https://www.facebook.com/madebyvince/" },
         { name: "Twitter", url: "https://twitter.com/madebyvince" },
-        { name: "Vimeo", url: "/https://vimeo.com/vnce" },
+        { name: "Vimeo", url: "https://vimeo.com/vince" },
     ];
     const links = [
         { name: "Work", url: "/work" },
@@ -51,7 +53,7 @@ const Footer = () => {
                         </p>
                         <p className="text-base">T: +44 (0)20 7470 9229 </p>
                         <p className="-mt-4 text-base">
-                            E: production@vince.co.uk
+                            <Obfuscate email="production@vince.co.uk" />
                         </p>
                     </div>
                 </div>

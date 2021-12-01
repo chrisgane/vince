@@ -34,8 +34,9 @@ const MainNav = () => {
         >
             {links.map((link) => (
                 <motion.li
+                    id="headerLink"
                     whileTap={{ scale: 0.9 }}
-                    className="mb-4 md:mb-6 hover:underline  font-semibold border-gray-100 tracking-wider transition duration-100"
+                    className="mb-4 md:mb-6   w-auto font-semibold border-gray-100 tracking-wider transition duration-100"
                     key={link.name}
                     onClick={() => setMenuOpen(false)}
                 >

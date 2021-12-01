@@ -61,11 +61,36 @@ const Search = () => {
                 },
             }}
         >
-            <div className=" w-full flex flex-col justify-center items-center  px-5 pt-32">
+            <div className=" w-full flex flex-col justify-center items-center  px-5 py-20">
                 {searchLoading && (
                     <div className="text-4xl absolute top-1/2  -translate-x-1/2 -translate-y-1/2 animate-spin">
                         <ImSpinner4 />
                     </div>
+                )}
+                {data.length === 0 && !searchLoading && router.query.q && (
+                    <motion.div
+                        initial={{
+                            opacity: 0,
+                            y: -20,
+                        }}
+                        animate={{
+                            opacity: 1,
+                            y: 0,
+                            transition: {
+                                duration: 0.4,
+                                ease: "easeOut",
+                                delay: 0.2,
+                            },
+                        }}
+                        className="  flex flex-col justify-center items-center "
+                    >
+                        <div className="text-lg font-semibold max-w-lg mb-4">
+                            No results. Try again
+                        </div>
+                        <div className="w-56">
+                            <SearchForm />
+                        </div>{" "}
+                    </motion.div>
                 )}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16  px-6 md:px-12 lg:px-40">
                     {data.length > 0 &&
@@ -97,37 +122,6 @@ const Search = () => {
                             );
                         })}
                 </div>
-
-                {data.length === 0 &&
-                    !searchLoading &&
-                    router.query.q &&
-                    router.query.q === null &&
-                    router.query.q ===
-                        undefined(
-                            <motion.div
-                                initial={{
-                                    opacity: 0,
-                                    y: -20,
-                                }}
-                                animate={{
-                                    opacity: 1,
-                                    y: 0,
-                                    transition: {
-                                        duration: 0.4,
-                                        ease: "easeOut",
-                                        delay: 0.6,
-                                    },
-                                }}
-                                className="  flex flex-col justify-center items-center "
-                            >
-                                <div className="text-lg font-semibold max-w-lg mb-4">
-                                    No results. Try again
-                                </div>
-                                <div className="w-56">
-                                    <SearchForm />
-                                </div>{" "}
-                            </motion.div>,
-                        )}
             </div>
             <Footer />
         </motion.div>

@@ -3,12 +3,13 @@ import { useTheme } from "./ThemeContext";
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
+import Obfuscate from "react-obfuscate";
 
 const MenuFooter = () => {
     const links = [
         { name: "Facebook", url: "https://www.facebook.com/madebyvince/" },
         { name: "Twitter", url: "https://twitter.com/madebyvince" },
-        { name: "Vimeo", url: "/https://vimeo.com/vnce" },
+        { name: "Vimeo", url: "https://vimeo.com/vince" },
     ];
     const { menuOpen, setMenuOpen } = useTheme();
 
@@ -41,9 +42,9 @@ const MenuFooter = () => {
                     </li>
                 ))}
             </ul>
-            <div className="hidden sm:block text-xs font-light mb-6 md:mb-0">
-                To chat, give us a call on 020 7470 9229 or email
-                production@vince.co.uk
+            <div className="text-xs font-light mb-6 md:mb-0">
+                To chat, give us a call on 020 7470 9229 or email{" "}
+                <Obfuscate email="production@vince.co.uk" />
             </div>
         </motion.div>
     );

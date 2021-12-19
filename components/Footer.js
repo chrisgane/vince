@@ -1,11 +1,11 @@
-import { useState } from "react";
-import { useTheme } from "./ThemeContext";
+import { useState, useEffect } from "react";
 import Logo from "./Logo";
 import SearchFormFooter from "./SearchFormFooter";
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Obfuscate from "react-obfuscate";
+import AOS from "aos";
 
 const Footer = () => {
     const router = useRouter();
@@ -21,6 +21,9 @@ const Footer = () => {
         { name: "Terms of use", url: "/terms" },
     ];
     const headerStyle = "font-black text-3xl text-white mb-12";
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -28,7 +31,7 @@ const Footer = () => {
             className="w-full bg-black  text-white"
         >
             <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 py-20">
-                <div>
+                <div data-aos="fade-up">
                     <p className={headerStyle}>Site map</p>
                     <ul>
                         {links.map((link) => (
@@ -43,7 +46,7 @@ const Footer = () => {
                         ))}
                     </ul>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <p className={headerStyle}>Contact us</p>
                     <div>
                         <p className="text-base">
@@ -57,7 +60,7 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <p className={headerStyle}> Join Vince?</p>
                     <div>
                         <p className={"text-base"}>
@@ -70,7 +73,7 @@ const Footer = () => {
                         </p>
                     </div>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <p className={headerStyle}> Searching for something?</p>
                     <div>
                         <SearchFormFooter />

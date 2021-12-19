@@ -9,6 +9,7 @@ const MainNav = () => {
         { name: "home", url: "/" },
         { name: "about", url: "/about" },
         { name: "work", url: "/work" },
+        { name: "contact", url: "/contact" },
     ];
     const { menuOpen, setMenuOpen } = useTheme();
 

@@ -8,7 +8,7 @@ const Logo = () => {
     const { menuOpen, setMenuOpen } = useTheme();
 
     return (
-        <div className=" z-30 ">
+        <div className=" z-30 h-40">
             <AnimatePresence>
                 {!menuOpen && (
                     <motion.div

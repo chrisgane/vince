@@ -6,12 +6,7 @@ import useSWR from "swr";
 import Slider2 from "../components/Slider2";
 import Footer from "../components/Footer";
 
-const Home = () => {
-    const fetcher = (url) => fetch(url).then((res) => res.json());
-    const { data, error } = useSWR(
-        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
-        fetcher,
-    );
+const Home = ({ data, posts }) => {
     return (
         <>
             <motion.div
@@ -27,16 +22,34 @@ const Home = () => {
                 exit={{
                     opacity: 0,
                 }}
-                className="pt-12 md:pt-16 pb-16 "
+                className=" pb-16 "
             >
-                <h1 className="text-center  font-normal text-2xl md:text-4xl mt-1 px-4 ">
+                <h1 className="text-center  font-normal text-2xl md:text-4xl -mt-10 px-4 ">
                     {data?.acf?.main_header && data.acf.main_header}
                 </h1>
-                <Slider2 />
+                <Slider2 posts={posts} />
             </motion.div>
             <Footer />
         </>
     );
+};
+
+export const getStaticProps = async (ctx) => {
+    const res = await fetch(
+        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
+    );
+    const data = await res.json();
+    const res2 = await fetch(
+        "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/portfolio",
+    );
+    const posts = await res2.json();
+
+    return {
+        props: {
+            data,
+            posts,
+        },
+    };
 };
 
 export default Home;

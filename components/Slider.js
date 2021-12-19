@@ -31,7 +31,9 @@ const Slider = ({ projects }) => {
             {projects && (
                 <div className="slider relative">
                     <Carousel
+                        dragging={true}
                         speed={700}
+                        pauseOnHover={true}
                         ease={"easeCubicOut"}
                         wrapAround={true}
                         slidesToShow={1}

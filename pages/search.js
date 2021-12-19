@@ -98,7 +98,7 @@ const Search = () => {
                         data.map((project) => {
                             return (
                                 <Link
-                                    href={`/work/${project.slug}/?id=${project.id}`}
+                                    href={`/work/${project.slug}`}
                                     scroll={false}
                                 >
                                     <a>

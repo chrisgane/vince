@@ -1,84 +1,44 @@
-import { useTheme } from "./ThemeContext";
-
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
-const MobileSorting = () => {
-    const {
-        activeProject,
-        setActiveProject,
-        setProjects,
-        projects,
-        categories,
-        setPage,
-        setCategories,
-    } = useTheme();
-
+const MobileSorting = ({ categories }) => {
     const router = useRouter();
     return (
-        <motion.ul
-            exit={{
-                opacity: 0,
-                y: -20,
-                transition: { duration: 0.3, ease: "easeIn" },
-            }}
-            initial={{
-                opacity: 0,
-                y: -30,
-            }}
-            animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.8,
-                    ease: "easeOut",
-                },
-            }}
+        <ul
+            initial={{}}
             className="flex flex-wrap items-center justify-center w-full   uppercase tracking-widest text-xxs xl:text-xs font-medium mb-6 mt-6"
         >
-            <motion.li
-                whileTap={{ scale: 1 }}
-                className={`${
-                    !router.query.id && "border-black"
-                } py-2 px-4 mr-2 mb-2 border  cursor-pointer  hover:bg-black hover:text-white`}
-                onClick={() => {
-                    setPage(1);
-                    router.push(`/work`);
-                }}
-            >
-                <div>ALL</div>
-            </motion.li>
+            <Link href={`/work`}>
+                <motion.li
+                    whileTap={{ scale: 1 }}
+                    className={`${
+                        router.asPath === "/work" && "border-black"
+                    } py-2 px-4 mr-2 mb-2 border  cursor-pointer  hover:bg-black hover:text-white`}
+                >
+                    <div>ALL</div>
+                </motion.li>
+            </Link>
             {categories.length > 0 &&
                 categories
                     .filter((item) => item.slug !== "uncategorized")
                     .map((category) => (
-                        <motion.li
+                        <Link
                             key={category.id}
-                            whileTap={{ scale: 1 }}
-                            className={`${
-                                router.query.category === category.name &&
-                                "border-black"
-                            } py-2 px-4 mr-2 mb-2  border hover:bg-black hover:text-white cursor-pointer whitespace-nowrap `}
-                            onClick={() => {
-                                setPage(1);
-                                router.push(
-                                    {
-                                        pathname: router.pathname,
-                                        query: {
-                                            category: category.name,
-                                            id: category.id,
-                                        },
-                                    },
-                                    undefined,
-                                    { scroll: false },
-                                );
-                            }}
+                            href={`/work/category/${category.slug}`}
                         >
-                            <div>{category.name}</div>
-                        </motion.li>
+                            <motion.li
+                                whileTap={{ scale: 1 }}
+                                className={`${
+                                    router.query.slug === category.slug &&
+                                    "border-black"
+                                } py-2 px-4 mr-2 mb-2  border hover:bg-black hover:text-white cursor-pointer whitespace-nowrap `}
+                            >
+                                <div>{category.name}</div>
+                            </motion.li>
+                        </Link>
                     ))}
-        </motion.ul>
+        </ul>
     );
 };
 

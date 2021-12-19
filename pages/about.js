@@ -6,6 +6,7 @@ import Link from "next/link";
 import Footer from "../components/Footer";
 // import { Parallax } from "react-parallax";
 import useSWR from "swr";
+import AOS from "aos";
 
 import {
     ParallaxProvider,
@@ -19,7 +20,9 @@ const About = () => {
         "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/132",
         fetcher,
     );
-
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
         <>
             {data && (
@@ -40,24 +43,30 @@ const About = () => {
                     }}
                 >
                     <div
+                        data-aos="fade-up"
                         className="w-full h-screen flex justify-center items-center -mt-24 "
                         style={{
                             background: `url(${data.acf.background_image})`,
                             backgroundPosition: "center center",
                         }}
                     >
-                        <h1 className="text-white text-6xl font-extrabold uppercase">
+                        <h1
+                            data-aos="fade-up"
+                            className="text-white text-6xl font-extrabold uppercase"
+                        >
                             {data.title.rendered}
                         </h1>
                     </div>
                     <div className="py-24 px-3">
                         <div
+                            data-aos="fade-up"
                             className="aboutContent text-center max-w-4xl m-auto"
                             dangerouslySetInnerHTML={{
                                 __html: data.acf.main_content,
                             }}
                         />
                         <img
+                            data-aos="fade-up"
                             src={data.acf.main_image}
                             className="m-auto w-full max-w-4xl mt-24"
                         />

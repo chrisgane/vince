@@ -1,41 +1,27 @@
-import { useState } from "react";
-import { useTheme } from "./ThemeContext";
+import { useEffect } from "react";
 
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import gsap from "gsap";
+import AOS from "aos";
 
-const ProjectsFeed = () => {
-    const { setActiveProject, projects, setProjects } = useTheme();
+const ProjectsFeed = ({ projects }) => {
+    useEffect(() => {
+        AOS.init();
+    }, []);
     return (
-        <motion.div
-            className=" mt-10"
-            initial={{
-                opacity: 0,
-                x: -30,
-            }}
-            animate={{
-                opacity: 1,
-                x: 0,
-                transition: {
-                    duration: 0.4,
-                    ease: "easeOut",
-                },
-            }}
-            exit={{
-                opacity: 0,
-                x: -30,
-            }}
-        >
+        <div className=" mt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16  px-6 md:px-12 lg:px-40">
                 {projects.map((project) => (
                     <Link
                         id="projectItem"
-                        href={`/work/${project.slug}/?id=${project.id}`}
+                        href={`/work/${project.slug}`}
                         scroll={false}
                     >
                         <a>
-                            <div className="flex flex-col justify-center items-center text-center">
+                            <div
+                                data-aos="fade-up"
+                                className=" flex flex-col justify-center items-center text-center"
+                            >
                                 <div className="overflow-hidden">
                                     <motion.img
                                         whileHover={{ scale: 1.03 }}
@@ -54,7 +40,7 @@ const ProjectsFeed = () => {
                     </Link>
                 ))}
             </div>
-        </motion.div>
+        </div>
     );
 };
 

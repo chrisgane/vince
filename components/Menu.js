@@ -92,7 +92,6 @@ const Menu = () => {
                         </div>
                     )}
                 </AnimatePresence>
-
                 <AnimatePresence exitBeforeEnter>
                     {menuOpen && <MenuAbout />}
                 </AnimatePresence>
@@ -102,10 +101,6 @@ const Menu = () => {
                     {menuOpen && <MenuFooter />}
                 </AnimatePresence>
             </div>
-            <img
-                src="/bg-image2.jpg"
-                className="w-full absolute top-0 right-0 object-cover h-full"
-            />
         </motion.div>
     );
 };

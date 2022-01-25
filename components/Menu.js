@@ -5,9 +5,10 @@ import MenuAbout from "./MenuAbout";
 import MenuFooter from "./MenuFooter";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchForm from "./SearchForm";
+import { VscChromeClose } from "react-icons/vsc";
 
 const Menu = () => {
-    const { menuOpen } = useTheme();
+    const { menuOpen, setMenuOpen } = useTheme();
 
     return (
         <motion.div
@@ -31,6 +32,17 @@ const Menu = () => {
                 },
             }}
         >
+            <motion.div
+                className={`absolute top-5 p-4 right-0 text-xs cursor-pointer font-semibold z-50 flex items-center uppercase tracking-widest text-white`}
+                onClick={() => setMenuOpen(!menuOpen)}
+                initial={{ opacity: 0 }}
+                animate={{
+                    opacity: 1,
+                }}
+                exit={{ opacity: 0 }}
+            >
+                <VscChromeClose className="ml-2 text-2xl lg:text-4xl" />
+            </motion.div>
             <motion.div
                 className="z-40 absolute top-0 mt-5 left-1/2 transform -translate-x-1/2"
                 initial={{ opacity: 0 }}

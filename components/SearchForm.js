@@ -1,18 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { DebounceInput } from "react-debounce-input";
-import { GrClose } from "react-icons/gr";
 import { AiOutlineLoading3Quarters, AiOutlineSearch } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useTheme } from "./ThemeContext";
 
 const SearchForm = ({ nav }) => {
-    const {
-        searchLoading,
-        setSearchLoading,
-        menuOpen,
-        setMenuOpen,
-    } = useTheme();
+    const { searchLoading, setSearchLoading, menuOpen, setMenuOpen } =
+        useTheme();
     const [value, setValue] = useState("");
     const ResultsRef = useRef();
     const itemRef = useRef();
@@ -23,7 +18,7 @@ const SearchForm = ({ nav }) => {
     };
     return (
         <motion.div
-            className="border flex flex-row items-center justify-center text-xs rounded-full  px-1 py-1"
+            className="border flex flex-row items-center justify-center text-xs rounded-full mt-2 px-1 py-1"
             initial={{ opacity: 0, y: 30 }}
             animate={{
                 opacity: 1,

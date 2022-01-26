@@ -43,8 +43,8 @@ const MenuFooter = () => {
                 ))}
             </ul>
             <div className="text-xs font-light mb-6 md:mb-0">
-                To chat, give us a call on 020 7470 9229 or email{" "}
-                <Obfuscate email="production@vince.co.uk" />
+                To chat, give us a call on <Obfuscate tel="020 7470 9229" /> or
+                email <Obfuscate email="production@vince.co.uk" />
             </div>
         </motion.div>
     );

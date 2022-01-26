@@ -59,7 +59,9 @@ const Footer = () => {
                             <br /> 1st floor <br /> 40 Drury Lane
                             <br /> London, WC2B 5RR.
                         </p>
-                        <p className="text-base">T: +44 (0)20 7470 9229 </p>
+                        <p className="text-base">
+                            T: <Obfuscate tel="+44 (0)20 7470 9229" />
+                        </p>
                         <p className="-mt-4 text-base">
                             <Obfuscate email="production@vince.co.uk" />
                         </p>

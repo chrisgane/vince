@@ -24,8 +24,13 @@ const Footer = () => {
     useEffect(() => {
         AOS.init();
     }, []);
+
+    const fullYear = () => {
+        return new Date().getFullYear();
+    };
+
     return (
-        <motion.div
+        <motion.footer
             initial={{ opacity: 0 }}
             animate={{ opacity: 1, transition: { duration: 1 } }}
             className="w-full bg-black  text-white"
@@ -83,11 +88,11 @@ const Footer = () => {
             <div className="bg-black flex flex-col lg:flex-row items-center justify-center border-t border-gray-900 py-3">
                 <img
                     src={`/vince-logo-white.svg`}
-                    className="w-24 my-6 lg:my-0 lg:mr-5"
+                    className="logo w-24 my-6 lg:my-0 lg:mr-0"
                 />
                 <p className="mt-6 mx-10 text-center">
-                    © Copyright 2021. VINCE MEDIA Ltd. No. 07708529. All rights
-                    reserved.
+                    © Copyright {fullYear()}. VINCE MEDIA Ltd. No. 07708529. All
+                    rights reserved.
                 </p>
                 <ul className="flex items-center my-6 lg:my-0">
                     {socials.map((item) => (
@@ -100,7 +105,7 @@ const Footer = () => {
                     ))}
                 </ul>
             </div>
-        </motion.div>
+        </motion.footer>
     );
 };
 

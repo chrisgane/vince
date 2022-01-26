@@ -62,15 +62,19 @@ p {
 .content img {
     @apply my-10 mx-auto;
 }
+
 .content a {
     @apply my-2 font-bold;
 }
+
 .content {
-    @apply my-2 text-base;
+    @apply mb-2 text-base;
 }
+
 .aboutContent h2 {
     @apply font-semibold italic text-5xl mb-16;
 }
+
 .aboutContent h3 {
     @apply font-bold text-3xl;
 }

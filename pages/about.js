@@ -1,18 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
-import { useTheme } from "../components/ThemeContext";
-import Link from "next/link";
+import React, { useEffect } from "react";
+import { motion } from "framer-motion";
 import Footer from "../components/Footer";
-// import { Parallax } from "react-parallax";
 import useSWR from "swr";
 import AOS from "aos";
 
-import {
-    ParallaxProvider,
-    Parallax,
-    ParallaxBanner,
-} from "react-scroll-parallax";
+import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
 
 const About = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -44,7 +36,7 @@ const About = () => {
                 >
                     <div
                         data-aos="fade-up"
-                        className="w-full h-screen flex justify-center items-center -mt-24 "
+                        className="w-full h-screen flex justify-center items-center -mt-28 "
                         style={{
                             background: `url(${data.acf.background_image})`,
                             backgroundPosition: "center center",

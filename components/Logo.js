@@ -6,7 +6,7 @@ const Logo = () => {
     const { menuOpen } = useTheme();
 
     return (
-        <div className="z-30 h-28 md:h-32">
+        <div className="z-30 h-12 md:h-16">
             <AnimatePresence>
                 {!menuOpen && (
                     <motion.div

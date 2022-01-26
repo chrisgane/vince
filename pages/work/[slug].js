@@ -11,6 +11,7 @@ import Image from "next/image";
 import { ImSpinner4 } from "react-icons/im";
 import { BsArrowDown } from "react-icons/bs";
 import AOS from "aos";
+import Title from "@/components/reusable/Title";
 
 const Portfolio = ({ data, project }) => {
     const router = useRouter();
@@ -20,15 +21,12 @@ const Portfolio = ({ data, project }) => {
     return (
         <>
             <div className="content w-full">
-                <div className="w-full  px-4 md:px-6 lg:px-10 xl:px-12 pt-12 md:pt-16 h-auto  flex flex-col items-center max-w-5xl justify-center  mx-auto  min-h-screen">
-                    <h1
-                        data-aos="fade"
-                        className="text-3xl text-center  font-semibold -mt-16 sm:-mt-10 -mb-16 sm:-mb-3 md:mb-6"
-                    >
+                <div className="w-full px-4 md:px-6 lg:px-10 xl:px-12 pt-0 h-auto flex flex-col items-center max-w-5xl justify-center mx-auto min-h-screen">
+                    <Title>
                         {project &&
                             project.title?.rendered &&
                             project.title.rendered}
-                    </h1>
+                    </Title>
                     <div
                         data-aos="fade"
                         className="flex flex-row items-start justify-start relative w-full h-full "

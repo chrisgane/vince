@@ -5,6 +5,7 @@ import useSWR from "swr";
 
 import Slider2 from "../components/Slider2";
 import Footer from "../components/Footer";
+import Title from "@/components/reusable/Title";
 
 const Home = ({ data, posts }) => {
     return (
@@ -24,9 +25,7 @@ const Home = ({ data, posts }) => {
                 }}
                 className=" pb-16 "
             >
-                <h1 className="text-center  font-normal text-2xl md:text-4xl -mt-10 px-4 ">
-                    {data?.acf?.main_header && data.acf.main_header}
-                </h1>
+                <Title> {data?.acf?.main_header && data.acf.main_header}</Title>
                 <Slider2 posts={posts} />
             </motion.div>
             <Footer />

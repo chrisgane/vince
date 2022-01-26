@@ -36,7 +36,7 @@ const Featured = ({ posts }) => {
     }, []);
 
     return (
-        <section>
+        <section className="mt-10">
             <div className="overflow-hidden pb-10">
                 <Slider settings={settings}>
                     {featuredProjects.map((project) => (

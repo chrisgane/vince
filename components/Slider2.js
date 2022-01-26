@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from "react-responsive-carousel";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import Slider from "react-slick";
 import AOS from "aos";
+import Slider from "./reusable/Slider";
 
 const Featured = ({ posts }) => {
     const featuredProjects = posts
@@ -19,10 +17,10 @@ const Featured = ({ posts }) => {
         dots: true,
         infinite: true,
         slidesToShow: 1,
-        speed: 800,
-        autoplay: true,
+        slidesToScroll: 1,
+        speed: 350,
+        autoplay: false,
         autoplaySpeed: 5000,
-        draggable: true,
 
         beforeChange: function (currentSlide, nextSlide) {
             setCurrentSlide(nextSlide);
@@ -32,53 +30,19 @@ const Featured = ({ posts }) => {
             console.log("after change", currentSlide);
         },
     };
+
     useEffect(() => {
         AOS.init();
     }, []);
+
     return (
-        <div className="w-full relative py-10 min-h-screen">
-            {/* <Carousel
-                showThumbs={false}
-                stopOnHover={false}
-                autoPlay={true}
-                infiniteLoop={true}
-                interval={5000}
-                showIndicators={false}
-                showStatus={false}
-                showIndicators={false}
-                dynamicHeight={false}
-                className="relative "
-            >
-                {featuredProjects.map((project) => (
-                    <div className="slideProper  w-full px-6 md:px-12 lg:px-40 relative  flex items-center justify-center ">
-                        <Link prefetch={false} href={`/work/${project.slug}`}>
-                            <div className=" w-full cursor-pointer ">
-                                <Image
-                                    src={project.acf.image}
-                                    placeholder="blur"
-                                    blurDataURL={project.acf.image}
-                                    width="1600"
-                                    height="1066.66"
-                                />
-                                <div className=" w-full flex flex-col lg:flex-row lg:justify-between ">
-                                    <h3 className="font-normal text-base md:text-lg lg:text-xl  text-left mb-0 ">
-                                        {project.title.rendered}
-                                    </h3>
-                                    <p className="text-sm lg:text-base tracking-wider text-left  lg:text-right max-w-3xl lg:pl-4">
-                                        {project.acf.heading}
-                                    </p>
-                                </div>
-                            </div>
-                        </Link>
-                    </div>
-                ))}
-            </Carousel> */}
+        <section>
             <div className="overflow-hidden pb-10">
-                <Slider {...settings}>
+                <Slider settings={settings}>
                     {featuredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="  px-6 md:px-12 lg:px-40 relative  flex items-center justify-center overflow-hidden"
+                            className="px-6 md:px-12 lg:px-40 relative flex items-center justify-center overflow-hidden"
                         >
                             <a href={`/work/${project.slug}`}>
                                 <div className=" w-full cursor-pointer ">
@@ -113,7 +77,7 @@ const Featured = ({ posts }) => {
                         <a>
                             <div
                                 data-aos="fade-up"
-                                className=" flex flex-col justify-center  "
+                                className="flex flex-col justify-center"
                             >
                                 <div className="overflow-hidden">
                                     <motion.div
@@ -152,7 +116,7 @@ const Featured = ({ posts }) => {
                     </Link>
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

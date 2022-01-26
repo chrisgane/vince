@@ -19,7 +19,7 @@ const Featured = ({ posts }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         speed: 350,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 5000,
 
         beforeChange: function (currentSlide, nextSlide) {

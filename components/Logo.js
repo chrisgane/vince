@@ -1,14 +1,12 @@
-import { useState } from "react";
-import { useTheme } from "./ThemeContext";
-
 import Link from "next/link";
+import { useTheme } from "./ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Logo = () => {
-    const { menuOpen, setMenuOpen } = useTheme();
+    const { menuOpen } = useTheme();
 
     return (
-        <div className=" z-30 h-40">
+        <div className="z-30 h-28 md:h-32">
             <AnimatePresence>
                 {!menuOpen && (
                     <motion.div

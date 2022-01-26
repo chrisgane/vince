@@ -76,7 +76,10 @@ const Featured = ({ posts }) => {
             <div className="overflow-hidden pb-10">
                 <Slider {...settings}>
                     {featuredProjects.map((project) => (
-                        <div className="  px-6 md:px-12 lg:px-40 relative  flex items-center justify-center overflow-hidden">
+                        <div
+                            key={project.id}
+                            className="  px-6 md:px-12 lg:px-40 relative  flex items-center justify-center overflow-hidden"
+                        >
                             <a href={`/work/${project.slug}`}>
                                 <div className=" w-full cursor-pointer ">
                                     <Image
@@ -102,7 +105,11 @@ const Featured = ({ posts }) => {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16  px-6 md:px-12 lg:px-40 mt-16">
                 {restProjects.map((project) => (
-                    <Link prefetch={false} href={`/work/${project.slug}`}>
+                    <Link
+                        key={project.id}
+                        prefetch={false}
+                        href={`/work/${project.slug}`}
+                    >
                         <a>
                             <div
                                 data-aos="fade-up"

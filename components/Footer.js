@@ -87,7 +87,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-black flex flex-col lg:flex-row items-center justify-center border-t border-gray-900 py-3">
+            <div className="bottom-info bg-black flex flex-col lg:flex-row items-center justify-center border-t border-gray-900 py-3">
                 <img
                     src={`/vince-logo-white.svg`}
                     className="logo w-24 my-6 lg:my-0 lg:mr-0"

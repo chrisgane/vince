@@ -116,7 +116,6 @@ const Search = () => {
                                     <Link
                                         key={project.id}
                                         href={`/work/${project.slug}`}
-                                        scroll={false}
                                     >
                                         <a>
                                             <div className="flex flex-col justify-center items-center text-center">

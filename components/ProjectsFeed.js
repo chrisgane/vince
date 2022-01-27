@@ -16,7 +16,6 @@ const ProjectsFeed = ({ projects }) => {
                         key={project.id}
                         id="projectItem"
                         href={`/work/${project.slug}`}
-                        scroll={false}
                     >
                         <a>
                             <div

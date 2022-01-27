@@ -52,7 +52,7 @@ const Menu = () => {
                 }}
                 exit={{ opacity: 0 }}
             >
-                <Link href="/" scroll={false}>
+                <Link href="/">
                     <a>
                         <img
                             src={`/vince-logo-white.svg`}
@@ -71,7 +71,7 @@ const Menu = () => {
                     }}
                     exit={{ opacity: 0 }}
                 >
-                    <Link href="/" scroll={false}>
+                    <Link href="/">
                         <a>
                             <img
                                 src={`/vince-logo-white.svg`}

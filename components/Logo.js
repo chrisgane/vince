@@ -14,7 +14,7 @@ const Logo = () => {
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                     >
-                        <Link href="/" scroll={false}>
+                        <Link href="/">
                             <a>
                                 <img
                                     src={`/vince-logo-blck.svg`}

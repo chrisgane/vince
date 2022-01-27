@@ -1,8 +1,6 @@
-import { useState } from "react";
 import { useTheme } from "./ThemeContext";
-
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const MainNav = () => {
     const links = [
@@ -37,17 +35,19 @@ const MainNav = () => {
                 <motion.li
                     id="headerLink"
                     whileTap={{ scale: 0.9 }}
-                    className="mb-4 md:mb-6   w-auto font-semibold border-gray-100 tracking-wider transition duration-100"
+                    className="mb-4 md:mb-6 w-auto font-semibold border-gray-100 tracking-wider transition duration-100"
                     key={link.name}
                     onClick={() => setMenuOpen(false)}
                 >
-                    <Link
-                        prefetch={false}
-                        href={link.url}
-                        onClick={() => setMenuOpen(false)}
-                    >
-                        {link.name}
-                    </Link>
+                    <div className="relative w-max">
+                        <Link
+                            prefetch={false}
+                            href={link.url}
+                            onClick={() => setMenuOpen(false)}
+                        >
+                            {link.name}
+                        </Link>
+                    </div>
                 </motion.li>
             ))}
         </motion.ul>

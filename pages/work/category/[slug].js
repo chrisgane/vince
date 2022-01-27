@@ -37,7 +37,6 @@ const Portfolio = ({ cats, posts, currentCat }) => {
                 <MobileSorting categories={cats} />
                 <ProjectsFeed projects={posts} />
             </div>
-            <Footer />
         </div>
     );
 };

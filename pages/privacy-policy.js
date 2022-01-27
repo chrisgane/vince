@@ -1,7 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useRouter } from "next/router";
-import Footer from "../components/Footer";
 
 const html = `
 <div class="wpb_wrapper">
@@ -81,8 +79,8 @@ Infinite length unless cleared by user<br>
 BY USING OUR WEBSITE, YOU CONSENT TO THE RELEVANT COOKIES BEING SET ON YOUR DEVICE. You can refuse to accept cookies by activating the setting on your browser which allows you to refuse the setting of cookies. You should note however that by deleting or blocking cookies, the website may not function correctly and you may not be able to access certain areas.</p>
 <p>To find out more about cookies, including how to see what cookies have been set and how to manage and delete them, visitwww.allaboutcookies.org.</p>
 <p>The Website may also link through to third party websites which may use cookies which we have no control over. We therefore recommend that you check the relevant third party privacy policies for information about any cookies that they may use.</p>
-
 		</div>`;
+
 const About = () => {
     return (
         <motion.div
@@ -104,8 +102,6 @@ const About = () => {
             <div className="w-full max-w-4xl mx-auto my-16">
                 <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
-
-            <Footer />
         </motion.div>
     );
 };

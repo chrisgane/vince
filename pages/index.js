@@ -1,15 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import Footer from "../components/Footer";
-import useSWR from "swr";
-
 import Slider2 from "../components/Slider2";
-import Footer from "../components/Footer";
 import Title from "@/components/reusable/Title";
+import Container from "@/components/reusable/Container";
 
 const Home = ({ data, posts }) => {
     return (
-        <>
+        <Container>
             <motion.div
                 initial={{
                     opacity: 0,
@@ -23,13 +20,12 @@ const Home = ({ data, posts }) => {
                 exit={{
                     opacity: 0,
                 }}
-                className=" pb-16 "
+                className="pb-16 "
             >
                 <Title> {data?.acf?.main_header && data.acf.main_header}</Title>
                 <Slider2 posts={posts} />
             </motion.div>
-            <Footer />
-        </>
+        </Container>
     );
 };
 

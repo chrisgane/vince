@@ -94,7 +94,6 @@ const Portfolio = ({ data, project }) => {
                             </Link>
                         ))}
             </div>
-            <Footer />
         </>
     );
 };

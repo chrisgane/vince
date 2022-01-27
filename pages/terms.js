@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-import Footer from "../components/Footer";
-
 const html = `
 <div class="wpb_wrapper">
 			<h2>Terms Of Use</h2>
@@ -111,8 +109,6 @@ const About = ({ data }) => {
             <div className="w-full max-w-4xl mx-auto my-16">
                 <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>
-
-            <Footer />
         </motion.div>
     );
 };

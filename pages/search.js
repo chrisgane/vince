@@ -3,9 +3,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useTheme } from "../components/ThemeContext";
 import { ImSpinner4 } from "react-icons/im";
-
 import SearchForm from "../components/SearchForm";
-import Footer from "../components/Footer";
 import Link from "next/link";
 import SearchResults from "@/components/reusable/SearchResults";
 import Container from "@/components/reusable/Container";
@@ -146,7 +144,6 @@ const Search = () => {
                     </>
                 )}
             </Container>
-            <Footer />
         </motion.div>
     );
 };

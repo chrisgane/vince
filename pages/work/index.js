@@ -33,7 +33,6 @@ const Portfolio = ({ posts, cats, data }) => {
                 <MobileSorting categories={cats} />
                 <ProjectsFeed projects={posts} />
             </div>
-            <Footer />
         </div>
     );
 };

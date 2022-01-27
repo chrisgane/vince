@@ -1,18 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { useRouter } from "next/router";
-import { useTheme } from "../components/ThemeContext";
-import Link from "next/link";
-import Footer from "../components/Footer";
-// import { Parallax } from "react-parallax";
+import React from "react";
+import { motion } from "framer-motion";
 import useSWR from "swr";
 import Obfuscate from "react-obfuscate";
-
-import {
-    ParallaxProvider,
-    Parallax,
-    ParallaxBanner,
-} from "react-scroll-parallax";
 
 const Contact = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -98,7 +87,6 @@ const Contact = () => {
                             </div>
                         </div>
                     </div>
-                    <Footer />
                 </motion.div>
             )}
         </>

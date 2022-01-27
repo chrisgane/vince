@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import Footer from "../components/Footer";
 import useSWR from "swr";
 import AOS from "aos";
 
@@ -15,6 +14,7 @@ const About = () => {
     useEffect(() => {
         AOS.init();
     }, []);
+
     return (
         <>
             {data && (
@@ -247,8 +247,6 @@ const About = () => {
                             </div>
                         </ParallaxProvider>
                     </div>
-
-                    <Footer />
                 </motion.div>
             )}
         </>

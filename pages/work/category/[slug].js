@@ -6,7 +6,6 @@ import MobileSorting from "../../../components/MobileSorting";
 import Footer from "../../../components/Footer";
 
 import useSWR from "swr";
-import gsap from "gsap";
 const Portfolio = ({ cats, posts, currentCat }) => {
     const router = useRouter();
 

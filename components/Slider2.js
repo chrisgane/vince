@@ -44,25 +44,27 @@ const Featured = ({ posts }) => {
                             key={project.id}
                             className="px-6 md:px-12 lg:px-40 relative flex items-center justify-center overflow-hidden"
                         >
-                            <a href={`/work/${project.slug}`}>
-                                <div className=" w-full cursor-pointer ">
-                                    <Image
-                                        src={project.acf.image}
-                                        placeholder="blur"
-                                        blurDataURL={project.acf.image}
-                                        width="1600"
-                                        height="1066.66"
-                                    />
-                                    <div className=" w-full flex flex-col lg:flex-row lg:justify-between ">
-                                        <h3 className="font-normal text-base md:text-lg lg:text-xl  text-left mb-0 ">
-                                            {project.title.rendered}
-                                        </h3>
-                                        <p className="text-sm lg:text-base tracking-wider text-left  lg:text-right max-w-3xl lg:pl-4">
-                                            {project.acf.heading}
-                                        </p>
+                            <Link href={`/work/${project.slug}`}>
+                                <a>
+                                    <div className=" w-full cursor-pointer ">
+                                        <Image
+                                            src={project.acf.image}
+                                            placeholder="blur"
+                                            blurDataURL={project.acf.image}
+                                            width="1600"
+                                            height="1066.66"
+                                        />
+                                        <div className=" w-full flex flex-col lg:flex-row lg:justify-between ">
+                                            <h3 className="font-normal text-base md:text-lg lg:text-xl  text-left mb-0 ">
+                                                {project.title.rendered}
+                                            </h3>
+                                            <p className="text-sm lg:text-base tracking-wider text-left  lg:text-right max-w-3xl lg:pl-4">
+                                                {project.acf.heading}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            </a>
+                                </a>
+                            </Link>
                         </div>
                     ))}
                 </Slider>

@@ -5,10 +5,7 @@ import { useRouter } from "next/router";
 const MobileSorting = ({ categories }) => {
     const router = useRouter();
     return (
-        <ul
-            initial={{}}
-            className="flex flex-wrap items-center justify-center w-full   uppercase tracking-widest text-xxs xl:text-xs font-medium mb-6 mt-6"
-        >
+        <ul className="flex flex-wrap items-center justify-center w-full uppercase tracking-widest text-xxs xl:text-xs font-medium mb-6 mt-10">
             <Link href={`/work`}>
                 <motion.li
                     whileTap={{ scale: 1 }}

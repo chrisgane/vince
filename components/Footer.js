@@ -1,14 +1,11 @@
-import { useState, useEffect } from "react";
-import Logo from "./Logo";
+import { useEffect } from "react";
 import SearchFormFooter from "./SearchFormFooter";
-import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Obfuscate from "react-obfuscate";
 import AOS from "aos";
 
 const Footer = () => {
-    const router = useRouter();
     const socials = [
         { name: "Facebook", url: "https://www.facebook.com/madebyvince/" },
         { name: "Twitter", url: "https://twitter.com/madebyvince" },

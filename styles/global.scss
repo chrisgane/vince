@@ -187,6 +187,10 @@ footer {
     }
 }
 
+.container {
+    min-height: calc(100vh - 564px - 112px);
+}
+
 @media (min-width: 1024px) {
     footer {
         .bottom-info {
@@ -204,5 +208,9 @@ footer {
 @media only screen and (orientation: landscape) and (max-width: 1024px) {
     #mobile-nav-wrapper {
         padding-top: 15%;
+    }
+
+    .container {
+        min-height: 100vh;
     }
 }

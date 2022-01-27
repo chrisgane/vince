@@ -13,6 +13,7 @@ const ProjectsFeed = ({ projects }) => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16  px-6 md:px-12 lg:px-40">
                 {projects.map((project) => (
                     <Link
+                        key={project.id}
                         id="projectItem"
                         href={`/work/${project.slug}`}
                         scroll={false}

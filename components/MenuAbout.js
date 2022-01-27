@@ -32,10 +32,10 @@ const MenuAbout = () => {
             }}
             key="ma"
         >
-            <p className="uppercase tracking-big font-semibold text-sm">
+            <p className="uppercase tracking-big font-semibold text-sm mb-6">
                 this is vince
-            </p>{" "}
-            <p className="text-xxs md:text-sm">
+            </p>
+            <p className="text-xxs md:text-sm mb-4">
                 an award winning creative production company based in London.
             </p>
             <p className="text-xxs md:text-sm">

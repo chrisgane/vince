@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { DebounceInput } from "react-debounce-input";
 import { AiOutlineLoading3Quarters, AiOutlineSearch } from "react-icons/ai";
 import { motion } from "framer-motion";
@@ -6,11 +6,8 @@ import { useRouter } from "next/router";
 import { useTheme } from "./ThemeContext";
 
 const SearchForm = ({ nav, className = "" }) => {
-    const { searchLoading, setSearchLoading, menuOpen, setMenuOpen } =
-        useTheme();
+    const { searchLoading, setSearchLoading, setMenuOpen } = useTheme();
     const [value, setValue] = useState("");
-    const ResultsRef = useRef();
-    const itemRef = useRef();
     const router = useRouter();
 
     const submit = (e) => {

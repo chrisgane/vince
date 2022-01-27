@@ -187,8 +187,10 @@ footer {
     }
 }
 
-.container {
+.my-container {
     min-height: calc(100vh - 564px - 112px);
+    max-width: 1280px;
+    width: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -210,7 +212,7 @@ footer {
         padding-top: 15%;
     }
 
-    .container {
+    .my-container {
         min-height: 100vh;
     }
 }

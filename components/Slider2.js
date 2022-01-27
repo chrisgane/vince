@@ -42,7 +42,7 @@ const Featured = ({ posts }) => {
                     {featuredProjects.map((project) => (
                         <div
                             key={project.id}
-                            className="px-6 md:px-12 lg:px-40 relative flex items-center justify-center overflow-hidden"
+                            className="px-6 md:px-1 relative flex items-center justify-center overflow-hidden"
                         >
                             <Link href={`/work/${project.slug}`}>
                                 <a>
@@ -69,7 +69,7 @@ const Featured = ({ posts }) => {
                     ))}
                 </Slider>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16  px-6 md:px-12 lg:px-40 mt-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 px-6 md:px-1 mt-16">
                 {restProjects.map((project) => (
                     <Link
                         key={project.id}
@@ -97,6 +97,7 @@ const Featured = ({ posts }) => {
                                                 ease: "easeOut",
                                             },
                                         }}
+                                        style={{ fontSize: 0 }}
                                     >
                                         <Image
                                             src={project.acf.image}
@@ -107,7 +108,7 @@ const Featured = ({ posts }) => {
                                         />
                                     </motion.div>
                                 </div>
-                                <h3 className="font-normal text-base md:text-lg lg:text-xl text-center ">
+                                <h3 className="font-normal text-base md:text-lg lg:text-xl text-center my-6">
                                     {project.title.rendered}
                                 </h3>
                                 <p className="text-sm tracking-wider mt-0 px-2  text-center">

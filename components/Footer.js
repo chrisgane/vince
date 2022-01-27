@@ -59,7 +59,7 @@ const Footer = () => {
                         <p className="text-base">
                             T: <Obfuscate tel="+44 (0)20 7470 9229" />
                         </p>
-                        <p className="-mt-4 text-base">
+                        <p className="text-base">
                             <Obfuscate email="production@vince.co.uk" />
                         </p>
                     </div>
@@ -89,7 +89,7 @@ const Footer = () => {
                     src={`/vince-logo-white.svg`}
                     className="logo w-24 my-6 lg:my-0 lg:mr-0"
                 />
-                <p className="mt-6 mx-10 text-center">
+                <p className="mx-10 text-center">
                     © Copyright {fullYear()}. VINCE MEDIA Ltd. No. 07708529. All
                     rights reserved.
                 </p>

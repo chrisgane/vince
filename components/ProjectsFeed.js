@@ -17,7 +17,7 @@ const ProjectsFeed = ({ projects }) => {
 
     return (
         <div className="mt-10 min-h-screen">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-16 px-6 md:px-12 lg:px-40">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 px-6 md:px-1">
                 {projectsState.map((project) => (
                     <Link
                         key={project.id}
@@ -33,7 +33,7 @@ const ProjectsFeed = ({ projects }) => {
                                         className="w-full h-full"
                                     />
                                 </div>
-                                <h3 className="font-normal text-gray-600 uppercase tracking-widest px-2 mt-6">
+                                <h3 className="font-normal text-gray-600 uppercase tracking-widest px-2 mt-6 mb-3">
                                     {project.title.rendered}
                                 </h3>
                                 <p className="text-sm md:text-base lg:text-lg -mt-1 px-2">

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import PortfolioContent from "../../components/reusable/portfolio-content/PortfolioContent";
 import { baseUrl } from "../../utils/general";
+import Container from "@/components/reusable/Container";
 
 const Portfolio = ({ posts, cats, data }) => {
     const router = useRouter();
@@ -25,11 +26,13 @@ const Portfolio = ({ posts, cats, data }) => {
     }, []);
 
     return (
-        <PortfolioContent
-            title={data?.acf?.main_header && data.acf.main_header}
-            cats={cats}
-            posts={posts}
-        />
+        <Container>
+            <PortfolioContent
+                title={data?.acf?.main_header && data.acf.main_header}
+                cats={cats}
+                posts={posts}
+            />
+        </Container>
     );
 };
 

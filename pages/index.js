@@ -34,6 +34,7 @@ export const getStaticProps = async (ctx) => {
         "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
     );
     const data = await res.json();
+
     const res2 = await fetch(
         "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/portfolio",
     );

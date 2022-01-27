@@ -1,21 +1,15 @@
 import React from "react";
-import { AppProps } from "next/app";
-import "tailwindcss/tailwind.css";
-import "../styles/global.scss";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
-import Router, { useRouter } from "next/router";
+import NextNprogress from "nextjs-progressbar";
 import Layout from "../components/Layout.js";
 import { ThemeProvider } from "../components/ThemeContext.js";
-import NextNprogress from "nextjs-progressbar";
-import "aos/dist/aos.css"; // You can also use <link> for styles
 
+import "../styles/global.scss";
+import "tailwindcss/tailwind.css";
+import "aos/dist/aos.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// function handleExitComplete() {
-//     if (typeof window !== "undefined") {
-//         window.scrollTo({ top: 0 });
-//     }
-// }
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
@@ -30,10 +24,7 @@ function MyApp({ Component, pageProps }) {
                     height={5}
                     showOnShallow={true}
                 />
-                <AnimatePresence
-                    exitBeforeEnter
-                    // onExitComplete={handleExitComplete}
-                >
+                <AnimatePresence exitBeforeEnter>
                     <Component {...pageProps} key={router.route} />
                 </AnimatePresence>
             </Layout>

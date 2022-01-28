@@ -2,6 +2,7 @@ import React from "react";
 import useSWR from "swr";
 import Obfuscate from "react-obfuscate";
 import { motion } from "framer-motion";
+import Container from "../components/reusable/Container";
 import {
     fadeRightExit,
     fadeRightInitial,
@@ -28,7 +29,7 @@ const Contact = () => {
                     animate={fadeRightAnimate}
                     exit={fadeRightExit}
                 >
-                    <div className="pt-0 md:pt-16  px-4 pb-48">
+                    <Container className="pt-0 md:pt-16  px-4 pb-48">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto ">
                             <div className="">
                                 <div className="text-gray-400 font-light text-sm  tracking-wide mb-6">
@@ -36,8 +37,8 @@ const Contact = () => {
                                 </div>
                                 <div className="text-2xl font-bold text-gray-800">
                                     <div className="my-2">
-                                        +44 (0)20 7470 9229
-                                    </div>{" "}
+                                        <Obfuscate tel="+44 (0)20 7470 9229" />
+                                    </div>
                                     <Obfuscate email="production@vince.co.uk" />
                                 </div>
                             </div>
@@ -54,7 +55,7 @@ const Contact = () => {
                                         Drury Lane
                                         <br />
                                         London, WC2B 5RR.
-                                    </div>{" "}
+                                    </div>
                                 </div>
                             </div>
                             <div className="">
@@ -80,7 +81,7 @@ const Contact = () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Container>
                 </motion.div>
             )}
         </>

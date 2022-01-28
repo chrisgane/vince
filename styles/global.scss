@@ -188,9 +188,14 @@ footer {
 }
 
 .my-container {
-    min-height: calc(100vh - 451px - 112px);
     max-width: 1280px;
     width: 100%;
+    &.expand-height {
+        min-height: calc(100vh - 451px - 112px);
+    }
+    &.wider {
+        max-width: 1500px;
+    }
 }
 
 @media (min-width: 1024px) {

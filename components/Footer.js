@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import SearchFormFooter from "./SearchFormFooter";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Obfuscate from "react-obfuscate";
 import AOS from "aos";
 import Container from "./reusable/Container";
+import SearchForm from "./SearchForm";
+import { motion } from "framer-motion";
 
 const Footer = () => {
     const socials = [
@@ -81,9 +81,7 @@ const Footer = () => {
                     </div>
                     <div data-aos="fade-up">
                         <p className={headerStyle}> Searching for something?</p>
-                        <div>
-                            <SearchFormFooter />
-                        </div>
+                        <SearchForm isWhite big />
                     </div>
                 </div>
                 <div className="bottom-info bg-black flex flex-col lg:flex-row items-center justify-center border-t border-gray-900 py-3">

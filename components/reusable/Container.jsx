@@ -9,7 +9,7 @@ const Container = ({
 }) => {
     return (
         <section
-            className={`my-container ${wider && "wider"} ${
+            className={`my-container relative ${wider && "wider"} ${
                 expandHeight && "expand-height"
             } mx-auto px-5 ${className}`}
             {...rest}

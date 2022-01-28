@@ -77,7 +77,7 @@ const Search = () => {
         >
             <Container>
                 {searchLoading && (
-                    <div className="text-4xl absolute top-1/2  -translate-x-1/2 -translate-y-1/2 animate-spin">
+                    <div className="text-4xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin">
                         <ImSpinner4 />
                     </div>
                 )}

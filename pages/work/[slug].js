@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
 import AOS from "aos";
-import Title from "@/components/reusable/Title";
-import { baseUrl } from "../../utils/general";
-import MoreProjects from "@/components/main/more-projects/MoreProjects";
+import Title from "../../components/reusable/Title";
+import MoreProjects from "../../components/main/more-projects/MoreProjects";
 import Error from "next/error";
 import { ImSpinner4 } from "react-icons/im";
+import { baseUrl } from "../../utils/general";
 
 const Portfolio = ({ posts, project }) => {
     const router = useRouter();

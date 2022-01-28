@@ -17,7 +17,7 @@ const AboutPageParallax = ({ sections }) => {
                     ></ParallaxBanner>
                     <div
                         className={`flex items-center justify-content py-24 lg:py-0 px-10 ${
-                            index % 2 !== 0 ? "row-span-full" : ""
+                            index % 2 !== 0 ? "lg:row-span-full" : ""
                         }`}
                     >
                         <div

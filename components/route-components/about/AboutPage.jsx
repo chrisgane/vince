@@ -33,7 +33,7 @@ const AboutPage = ({ data }) => {
             image: data.acf.parallax_img_4,
         },
     ];
-    console.log(parallaxSections);
+
     return (
         data && (
             <motion.div

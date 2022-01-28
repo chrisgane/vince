@@ -37,21 +37,33 @@ const Portfolio = ({ posts, project }) => {
                                 data-aos="fade"
                                 className="flex mt-10 flex-row items-start justify-start relative w-full h-full "
                             >
-                                <iframe
-                                    src={project.acf.vimeo}
-                                    width="1140"
-                                    height="520"
-                                    frameborder="0"
-                                    webkitallowfullscreen
-                                    mozallowfullscreen
-                                    allowfullscreen
-                                    autoplay
-                                ></iframe>
+                                <div
+                                    style={{
+                                        paddingBottom: "56.25%",
+                                        position: "relative",
+                                        width: "100%",
+                                    }}
+                                >
+                                    <iframe
+                                        src={project.acf.vimeo}
+                                        width="1140"
+                                        height="520"
+                                        frameBorder="0"
+                                        allowFullScreen
+                                        style={{
+                                            position: "absolute",
+                                            top: 0,
+                                            left: 0,
+                                            width: "100%",
+                                            height: "100%",
+                                        }}
+                                    ></iframe>
+                                </div>
                             </div>
                             <div
                                 data-aos="fade-up"
                                 id="main-content"
-                                className=" text-lg -mt-16 sm:-mt-4 md:mt-10"
+                                className=" text-lg mt-4"
                                 dangerouslySetInnerHTML={{
                                     __html: project.acf.content,
                                 }}
@@ -70,7 +82,7 @@ export const getStaticProps = async (ctx) => {
     const posts = await portfolioRes.json();
 
     const currentPost = posts.filter((item) => item.slug === ctx.params.slug);
-    console.log(currentPost);
+
     return {
         props: {
             posts,

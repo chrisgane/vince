@@ -1,7 +1,12 @@
 import React from "react";
-import { motion } from "framer-motion";
 import useSWR from "swr";
 import Obfuscate from "react-obfuscate";
+import { motion } from "framer-motion";
+import {
+    fadeRightExit,
+    fadeRightInitial,
+    fadeRightAnimate,
+} from "../utils/animation-settings";
 
 const Contact = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -19,20 +24,9 @@ const Contact = () => {
         <>
             {data && (
                 <motion.div
-                    initial={{
-                        opacity: 0,
-                        x: -20,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        x: 0,
-                        transition: { duration: 0.4, ease: "easeOut" },
-                    }}
-                    exit={{
-                        opacity: 0,
-                        x: -20,
-                        transition: { duration: 0.4, ease: "easeOut" },
-                    }}
+                    initial={fadeRightInitial}
+                    animate={fadeRightAnimate}
+                    exit={fadeRightExit}
                 >
                     <div className="pt-0 md:pt-16  px-4 pb-48">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto ">

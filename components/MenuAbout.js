@@ -1,35 +1,17 @@
-import { useState } from "react";
-import { useTheme } from "./ThemeContext";
-
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
+import {
+    fadeUpAnimateDefault,
+    fadeUpInitial,
+    fadeUpExitDefault,
+} from "../utils/animation-settings";
 
 const MenuAbout = () => {
-    const links = [
-        { name: "home", url: "/" },
-        { name: "about", url: "/about" },
-        { name: "work", url: "/work" },
-    ];
-    const { menuOpen, setMenuOpen } = useTheme();
-
     return (
         <motion.div
             className="max-w-sm "
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5,
-                    delay: 0.8,
-                    ease: "easeOut",
-                },
-            }}
-            exit={{
-                opacity: 0,
-                y: -30,
-                transition: { duration: 0.3, ease: "easeIn" },
-            }}
+            initial={fadeUpInitial}
+            animate={fadeUpAnimateDefault}
+            exit={fadeUpExitDefault}
             key="ma"
         >
             <p className="uppercase tracking-big font-semibold text-sm mb-6">

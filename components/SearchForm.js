@@ -4,36 +4,25 @@ import { AiOutlineLoading3Quarters, AiOutlineSearch } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useTheme } from "./ThemeContext";
+import {
+    fadeUpAnimateDefault,
+    fadeUpExitDefault,
+    fadeUpInitial,
+} from "utils/animation-settings";
 
 const SearchForm = ({ isWhite = false, className = "" }) => {
     const { searchLoading, setSearchLoading, setMenuOpen } = useTheme();
     const [value, setValue] = useState("");
     const router = useRouter();
 
-    const submit = (e) => {
-        setSearchTerm();
-    };
-
     const color = isWhite ? "text-white" : "text-gray-700";
 
     return (
         <motion.div
             className={`w-56 border flex flex-row items-center justify-start text-xs rounded-full mt-2 px-1 py-1 ${className}`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 0.5,
-                    delay: 0.8,
-                    ease: "easeOut",
-                },
-            }}
-            exit={{
-                opacity: 0,
-                y: -30,
-                transition: { duration: 0.3, ease: "easeIn" },
-            }}
+            initial={fadeUpInitial}
+            animate={fadeUpAnimateDefault}
+            exit={fadeUpExitDefault}
         >
             {searchLoading ? (
                 <div className="animate-spin">

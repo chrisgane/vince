@@ -1,9 +1,13 @@
 import React, { useEffect } from "react";
-import { motion } from "framer-motion";
 import useSWR from "swr";
 import AOS from "aos";
-
+import { motion } from "framer-motion";
 import { ParallaxProvider, ParallaxBanner } from "react-scroll-parallax";
+import {
+    fadeRightExit,
+    fadeRightInitial,
+    fadeRightAnimate,
+} from "../utils/animation-settings";
 
 const About = () => {
     const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -19,20 +23,9 @@ const About = () => {
         <>
             {data && (
                 <motion.div
-                    initial={{
-                        opacity: 0,
-                        x: -20,
-                    }}
-                    animate={{
-                        opacity: 1,
-                        x: 0,
-                        transition: { duration: 0.4, ease: "easeOut" },
-                    }}
-                    exit={{
-                        opacity: 0,
-                        x: -20,
-                        transition: { duration: 0.4, ease: "easeOut" },
-                    }}
+                    initial={fadeRightInitial}
+                    animate={fadeRightAnimate}
+                    exit={fadeRightExit}
                 >
                     <div
                         data-aos="fade-up"

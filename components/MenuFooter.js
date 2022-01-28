@@ -1,9 +1,10 @@
-import { useState } from "react";
-import { useTheme } from "./ThemeContext";
-
-import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
 import Obfuscate from "react-obfuscate";
+import { motion } from "framer-motion";
+import {
+    fadeUpAnimateDefault,
+    fadeUpExitDefault,
+    fadeUpInitial,
+} from "../utils/animation-settings";
 
 const MenuFooter = () => {
     const links = [
@@ -11,26 +12,26 @@ const MenuFooter = () => {
         { name: "Twitter", url: "https://twitter.com/madebyvince" },
         { name: "Vimeo", url: "https://vimeo.com/vince" },
     ];
-    const { menuOpen, setMenuOpen } = useTheme();
 
     return (
         <motion.div
             key="ul2"
             className="flex flex-col-reverse md:flex-row justify-between w-full pb-4"
-            initial={{ opacity: 0, y: 30 }}
+            initial={fadeUpInitial}
             animate={{
-                opacity: 1,
-                y: 0,
+                ...fadeUpAnimateDefault,
                 transition: {
+                    ...fadeUpAnimateDefault.transition,
                     duration: 0.7,
                     delay: 0.9,
-                    ease: "easeOut",
                 },
             }}
             exit={{
-                opacity: 0,
-                y: 30,
-                transition: { duration: 0.4, ease: "easeIn" },
+                ...fadeUpExitDefault,
+                transtion: {
+                    ...fadeUpExitDefault.transition,
+                    duration: 0.4,
+                },
             }}
         >
             <ul className="flex text-white uppercase text-xxs font-light tracking-widest z-30">

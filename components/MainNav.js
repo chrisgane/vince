@@ -1,6 +1,11 @@
-import { useTheme } from "./ThemeContext";
 import Link from "next/link";
+import { useTheme } from "./ThemeContext";
 import { motion } from "framer-motion";
+import {
+    fadeUpAnimateDefault,
+    fadeUpInitial,
+    fadeUpExitDefault,
+} from "../utils/animation-settings";
 
 const MainNav = () => {
     const links = [
@@ -13,21 +18,21 @@ const MainNav = () => {
 
     return (
         <motion.ul
-            className="text-white  uppercase text-base md:text-3xl z-30  "
-            initial={{ opacity: 0, y: 30 }}
+            className="text-white uppercase text-base md:text-3xl z-30  "
+            initial={fadeUpInitial}
             animate={{
-                opacity: 1,
-                y: 0,
+                ...fadeUpAnimateDefault,
                 transition: {
-                    duration: 0.5,
+                    ...fadeUpAnimateDefault.transition,
                     delay: 0.7,
-                    ease: "easeOut",
                 },
             }}
             exit={{
-                opacity: 0,
-                y: -30,
-                transition: { duration: 0.4, ease: "easeIn" },
+                ...fadeUpExitDefault,
+                transtion: {
+                    ...fadeUpAnimateDefault.transition,
+                    duration: 0.4,
+                },
             }}
             key="ul"
         >

@@ -1,5 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import {
+    fadeRightExit,
+    fadeRightInitial,
+    fadeRightAnimate,
+} from "../utils/animation-settings";
 
 const html = `
 <div class="wpb_wrapper">
@@ -91,20 +96,9 @@ Our site is for private and non-commercial use only. You agree not to use our si
 const About = ({ data }) => {
     return (
         <motion.div
-            initial={{
-                opacity: 0,
-                x: -20,
-            }}
-            animate={{
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.4, ease: "easeOut" },
-            }}
-            exit={{
-                opacity: 0,
-                x: -20,
-                transition: { duration: 0.4, ease: "easeOut" },
-            }}
+            initial={fadeRightInitial}
+            animate={fadeRightAnimate}
+            exit={fadeRightExit}
         >
             <div className="w-full max-w-4xl mx-auto my-16">
                 <div dangerouslySetInnerHTML={{ __html: html }} />

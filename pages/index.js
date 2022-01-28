@@ -4,6 +4,11 @@ import Slider2 from "../components/Slider2";
 import Title from "@/components/reusable/Title";
 import Container from "@/components/reusable/Container";
 import RestProjects from "@/components/main/rest-projects/RestProjects";
+import {
+    fadeRightExit,
+    fadeRightInitial,
+    fadeRightAnimate,
+} from "../utils/animation-settings";
 
 const Home = ({ data, posts }) => {
     const featuredProjects = posts
@@ -17,21 +22,12 @@ const Home = ({ data, posts }) => {
     return (
         <Container>
             <motion.div
-                initial={{
-                    opacity: 0,
-                    x: -20,
-                }}
-                animate={{
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.4, ease: "easeOut" },
-                }}
-                exit={{
-                    opacity: 0,
-                }}
+                initial={fadeRightInitial}
+                animate={fadeRightAnimate}
+                exit={fadeRightExit}
                 className="pb-16 "
             >
-                <Title> {data?.acf?.main_header && data.acf.main_header}</Title>
+                <Title>{data?.acf?.main_header && data.acf.main_header}</Title>
                 <Slider2 posts={featuredProjects} />
                 <RestProjects posts={restProjects} />
             </motion.div>

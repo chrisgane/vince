@@ -1,3 +1,4 @@
+import Grid from "@/components/reusable/grid/Grid";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,7 +12,7 @@ const MoreProjects = ({ portfolioPosts }) => {
             >
                 More projects
             </h2>
-            <div className="grid grid-cols-1 w-full  md:grid-cols-2 lg:grid-cols-3  gap-y-16  px-6 md:px-12 lg:px-40 pb-20">
+            <Grid>
                 {portfolioPosts &&
                     portfolioPosts
                         .sort(function (a, b) {
@@ -44,7 +45,7 @@ const MoreProjects = ({ portfolioPosts }) => {
                                 </a>
                             </Link>
                         ))}
-            </div>
+            </Grid>
         </>
     );
 };

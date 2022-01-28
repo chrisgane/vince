@@ -3,8 +3,17 @@ import { motion } from "framer-motion";
 import Slider2 from "../components/Slider2";
 import Title from "@/components/reusable/Title";
 import Container from "@/components/reusable/Container";
+import RestProjects from "@/components/main/rest-projects/RestProjects";
 
 const Home = ({ data, posts }) => {
+    const featuredProjects = posts
+        .filter((project) => project.acf.featured)
+        .slice(0, 4);
+
+    const restProjects = posts
+        .filter((project) => project.acf.featured)
+        .slice(4);
+
     return (
         <Container>
             <motion.div
@@ -23,7 +32,8 @@ const Home = ({ data, posts }) => {
                 className="pb-16 "
             >
                 <Title> {data?.acf?.main_header && data.acf.main_header}</Title>
-                <Slider2 posts={posts} />
+                <Slider2 posts={featuredProjects} />
+                <RestProjects posts={restProjects} />
             </motion.div>
         </Container>
     );

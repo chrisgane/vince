@@ -10,7 +10,7 @@ const SearchResults = ({ results = [], searchedKeyword }) => {
                         {results.length} result{results.length > 1 && "s"} for "
                         {searchedKeyword}"
                     </Title>
-                    <p className="text-base text-center">
+                    <p className="text-base text-center my-4">
                         We have found {results.length} match
                         {results.length > 1 && "es"} with the word you searched
                         "{searchedKeyword}".
@@ -19,7 +19,7 @@ const SearchResults = ({ results = [], searchedKeyword }) => {
             ) : (
                 <>
                     <Title>0 results for "{searchedKeyword}"</Title>
-                    <p className="text-base text-center">
+                    <p className="text-base text-center my-4">
                         There is nothing found that matches your search
                         criteria. Try different keywords.
                     </p>

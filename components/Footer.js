@@ -34,7 +34,7 @@ const Footer = () => {
             className="w-full bg-black  text-white"
         >
             <Container wider expandHeight={false}>
-                <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-20 py-20">
+                <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 px-6 md:px-20 py-20">
                     <div data-aos="fade-up">
                         <p className={headerStyle}>Site map</p>
                         <ul>

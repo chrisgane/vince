@@ -26,7 +26,8 @@
         "react-slick": "^0.28.1",
         "slick-carousel": "^1.8.1",
         "swiper": "7.0.5",
-        "swr": "1.0.1"
+        "swr": "1.0.1",
+        "tailwindcss": "^2.0.2"
     },
     "devDependencies": {
         "autoprefixer": "^10.1.0",
@@ -35,7 +36,6 @@
         "eslint-plugin-prettier": "^3.2.0",
         "postcss": "^8.3.7",
         "prettier": "^2.2.1",
-        "sass": "1.32.5",
-        "tailwindcss": "^2.0.2"
+        "sass": "1.32.5"
     }
 }

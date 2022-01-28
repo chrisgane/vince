@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useTheme } from "./ThemeContext";
 
-const SearchForm = ({ nav, className = "" }) => {
+const SearchForm = ({ isWhite = false, className = "" }) => {
     const { searchLoading, setSearchLoading, setMenuOpen } = useTheme();
     const [value, setValue] = useState("");
     const router = useRouter();
@@ -13,6 +13,8 @@ const SearchForm = ({ nav, className = "" }) => {
     const submit = (e) => {
         setSearchTerm();
     };
+
+    const color = isWhite ? "text-white" : "text-gray-700";
 
     return (
         <motion.div
@@ -35,10 +37,12 @@ const SearchForm = ({ nav, className = "" }) => {
         >
             {searchLoading ? (
                 <div className="animate-spin">
-                    <AiOutlineLoading3Quarters className="text-gray-500 text-2xl" />
+                    <AiOutlineLoading3Quarters
+                        className={`text-2xl ml-1 ${color}`}
+                    />
                 </div>
             ) : (
-                <AiOutlineSearch className="text-gray-500 text-2xl ml-1" />
+                <AiOutlineSearch className={`text-2xl ml-1 ${color}`} />
             )}
             <DebounceInput
                 minLength={2}
@@ -51,9 +55,7 @@ const SearchForm = ({ nav, className = "" }) => {
                         window.scrollTo(0, 0);
                     });
                 }}
-                className={`bg-transparent ml-2 outline-none  ${
-                    nav ? "text-white" : "text-gray-700"
-                }`}
+                className={`bg-transparent ml-2 outline-none ${color}`}
                 placeholder="Search"
             />
         </motion.div>

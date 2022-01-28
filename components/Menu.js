@@ -88,7 +88,7 @@ const Menu = () => {
                             <nav>
                                 <MainNav />
                             </nav>
-                            <SearchForm className="mb-6" />
+                            <SearchForm className="mb-6" isWhite />
                         </div>
                     )}
                 </AnimatePresence>

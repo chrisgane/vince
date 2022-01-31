@@ -72,6 +72,7 @@ const Contact = () => {
                                                 <a
                                                     href={item.url}
                                                     target="_blank"
+                                                    rel="noopener noreferrer"
                                                 >
                                                     {item.name}
                                                 </a>

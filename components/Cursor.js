@@ -47,7 +47,8 @@ const Cursor = () => {
     useEffect(() => {
         console.log(slideIndex);
     }, [slideIndex]);
-    return <div class="cursor"></div>;
+
+    return <div className="cursor"></div>;
 };
 
 export default Cursor;

@@ -106,7 +106,10 @@ const Search = () => {
                         </motion.div>
                         <Grid cols={2} className="pb-20">
                             {data.map((project) => (
-                                <ProjectCard project={project} />
+                                <ProjectCard
+                                    key={project.id}
+                                    project={project}
+                                />
                             ))}
                         </Grid>
                     </>

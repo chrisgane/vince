@@ -70,7 +70,10 @@ const Slider = ({ projects }) => {
                         }}
                     >
                         {projects.map((project) => (
-                            <div className="h-screen w-full p-4 flex items-center justify-center bg-gray-100">
+                            <div
+                                key={project.id}
+                                className="h-screen w-full p-4 flex items-center justify-center bg-gray-100"
+                            >
                                 <img
                                     className="w-auto max-w-7xl"
                                     src={project.acf.image}

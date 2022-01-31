@@ -37,7 +37,11 @@ const MenuFooter = () => {
             <ul className="flex text-white uppercase text-xxs font-light tracking-widest z-30">
                 {links.map((link) => (
                     <li className="mr-5 hover:text-gray-300" key={link.name}>
-                        <a href={link.url} target="_blank">
+                        <a
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             {link.name}
                         </a>
                     </li>

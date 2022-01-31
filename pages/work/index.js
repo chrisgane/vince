@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import PortfolioContent from "../../components/reusable/portfolio-content/PortfolioContent";
 import { baseUrl } from "../../utils/general";
 import Container from "@/components/reusable/Container";
+import Promise from "promise";
 
 const Portfolio = ({ posts, cats, data }) => {
     const router = useRouter();

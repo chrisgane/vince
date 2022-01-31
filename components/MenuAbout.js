@@ -21,9 +21,9 @@ const MenuAbout = () => {
                 an award winning creative production company based in London.
             </p>
             <p className="text-xxs md:text-sm">
-                Est. in 2011, we're experts in creating TV Commercials, digital
-                films, DRTV, idents and brand films through our superb roster of
-                directors.
+                Est. in 2011, we&apos;re experts in creating TV Commercials,
+                digital films, DRTV, idents and brand films through our superb
+                roster of directors.
             </p>
         </motion.div>
     );

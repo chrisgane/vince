@@ -10,6 +10,10 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow-y: scroll;
+}
+
 p {
     @apply text-sm font-light leading-relaxed my-6;
 }
@@ -176,6 +180,7 @@ p {
     padding-top: 8rem;
     background: url("../public/bg-image2.jpg") no-repeat #262626;
     background-size: cover;
+    overflow: hidden;
 }
 
 footer {
@@ -219,6 +224,7 @@ footer {
 @media only screen and (orientation: landscape) and (max-width: 1024px) {
     #mobile-nav-wrapper {
         padding-top: 15%;
+        overflow-y: scroll;
     }
 
     .my-container {

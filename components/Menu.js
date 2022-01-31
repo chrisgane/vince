@@ -33,7 +33,7 @@ const Menu = () => {
             }}
         >
             <motion.div
-                className={`absolute top-5 p-4 right-0 text-xs cursor-pointer font-semibold z-50 flex items-center uppercase tracking-widest text-white`}
+                className={`absolute top-5 p-4 right-5 text-xs cursor-pointer font-semibold z-50 flex items-center uppercase tracking-widest text-white`}
                 onClick={() => setMenuOpen(!menuOpen)}
                 initial={{ opacity: 0 }}
                 animate={{

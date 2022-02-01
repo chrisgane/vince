@@ -203,6 +203,15 @@ footer {
     }
 }
 
+.img-scale {
+    transition: transform 0.3s ease-in-out;
+    &:focus,
+    &:active,
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
 @media (min-width: 1024px) {
     footer {
         .bottom-info {

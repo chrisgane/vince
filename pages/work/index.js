@@ -37,7 +37,7 @@ const Portfolio = ({ posts, cats, data }) => {
     );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps = async () => {
     const getData = () => {
         return Promise.all([
             fetch(baseUrl + "portfolio").then((res) => res.json()),
@@ -56,6 +56,7 @@ export const getStaticProps = async (ctx) => {
             cats: categoriesData,
             data: workPageData,
         },
+        revalidate: 600,
     };
 };
 

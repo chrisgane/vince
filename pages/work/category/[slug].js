@@ -54,6 +54,7 @@ export const getStaticProps = async (ctx) => {
             cats: categories,
             currentCat: currentCategory,
         },
+        revalidate: 600,
     };
 };
 

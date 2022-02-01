@@ -35,7 +35,7 @@ const Home = ({ data, posts }) => {
     );
 };
 
-export const getStaticProps = async (ctx) => {
+export const getStaticProps = async () => {
     const res = await fetch(
         "https://stupefied-antonelli.136-244-69-22.plesk.page/index.php/wp-json/wp/v2/pages/2",
     );
@@ -51,6 +51,7 @@ export const getStaticProps = async (ctx) => {
             data,
             posts,
         },
+        revalidate: 600,
     };
 };
 

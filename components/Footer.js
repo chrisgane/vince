@@ -18,7 +18,7 @@ const Footer = () => {
         { name: "Privacy policy", url: "/privacy-policy" },
         { name: "Terms of use", url: "/terms" },
     ];
-    const headerStyle = "font-black text-3xl text-white mb-12";
+    const headerStyle = "font-semibold text-3xl text-white mb-12";
     useEffect(() => {
         AOS.init();
     }, []);

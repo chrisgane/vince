@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AOS from "aos";
@@ -27,7 +27,7 @@ const Slider2 = ({ posts }) => {
         },
 
         afterChange: function (currentSlide) {
-            console.log("after change", currentSlide);
+            // console.log("after change", currentSlide);
         },
     };
 
@@ -58,7 +58,7 @@ const Slider2 = ({ posts }) => {
     return (
         <section className="overflow-hidden pb-10 mt-10 relative">
             <Slider settings={settings}>
-                {posts.map((project) => (
+                {posts.map((project, index) => (
                     <div
                         key={project.id}
                         className="px-6 md:px-1 relative flex items-center justify-center overflow-hidden"
@@ -68,16 +68,22 @@ const Slider2 = ({ posts }) => {
                                 onMouseDown={(e) => handleOnMouseDown(e)}
                                 onClick={(e) => handleOnClick(e)}
                             >
-                                <div className=" w-full cursor-pointer ">
+                                <div className="flex flex-col w-full cursor-pointer">
                                     <Image
-                                        src={project.acf.image}
-                                        placeholder="blur"
-                                        blurDataURL={project.acf.image}
-                                        width="1600"
-                                        height="1066.66"
+                                        src={project.acf.image.url}
+                                        {...(index !== 0 && {
+                                            placeholder: "blur",
+                                            blurDataURL:
+                                                project.acf.image.sizes
+                                                    .thumbnail,
+                                        })}
+                                        width={project.acf.image.width}
+                                        height={project.acf.image.height}
+                                        alt={project.acf.image.alt}
+                                        {...(index === 0 && { priority: true })}
                                     />
-                                    <div className=" w-full flex flex-col lg:flex-row lg:justify-between ">
-                                        <h3 className="font-normal text-base md:text-lg lg:text-xl  text-left mb-0 ">
+                                    <div className="w-full flex flex-col lg:flex-row lg:justify-between mt-1">
+                                        <h3 className="font-normal text-base md:text-lg lg:text-xl text-left mb-0">
                                             {project.title.rendered}
                                         </h3>
                                         <p className="text-sm lg:text-base tracking-wider text-left  lg:text-right max-w-3xl lg:pl-4">

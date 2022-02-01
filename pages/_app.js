@@ -8,8 +8,6 @@ import { ThemeProvider } from "../components/ThemeContext.js";
 import "../styles/global.scss";
 import "tailwindcss/tailwind.css";
 import "aos/dist/aos.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();

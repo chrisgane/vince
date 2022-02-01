@@ -27,10 +27,17 @@ const Slider = ({ settings, children, ...props }) => {
 
     useEffect(() => {
         if (containerRef.current) {
-            containerRef.current.addEventListener("touchstart", touchStart);
-            containerRef.current.addEventListener("touchmove", preventTouch, {
-                passive: false,
+            containerRef.current.addEventListener("touchstart", touchStart, {
+                passive: true,
             });
+            containerRef.current.addEventListener(
+                "touchmove",
+                preventTouch,
+                {
+                    passive: false,
+                },
+                { passive: true },
+            );
         }
 
         return () => {
@@ -38,6 +45,9 @@ const Slider = ({ settings, children, ...props }) => {
                 containerRef.current.removeEventListener(
                     "touchstart",
                     touchStart,
+                    {
+                        passive: false,
+                    },
                 );
                 containerRef.current.removeEventListener(
                     "touchmove",

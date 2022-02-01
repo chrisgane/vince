@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "@/components/reusable/project-card/ProjectCard";
+import ProjectCard from "../../reusable/project-card/ProjectCard";
 
 const RestProjects = ({ posts }) => {
     return (

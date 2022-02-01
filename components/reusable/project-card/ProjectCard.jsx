@@ -22,11 +22,12 @@ const ProjectCard = ({ project }) => {
                             style={{ fontSize: 0 }}
                         >
                             <Image
-                                src={project.acf.image}
-                                width="800"
-                                height="533"
+                                src={project.acf.image.url}
                                 placeholder="blur"
-                                blurDataURL={project.acf.image}
+                                blurDataURL={project.acf.image.sizes.thumbnail}
+                                width={project.acf.image.width}
+                                height={project.acf.image.height}
+                                alt={project.acf.image.alt}
                             />
                         </motion.div>
                     </div>

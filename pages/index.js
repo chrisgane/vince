@@ -9,6 +9,7 @@ import {
     fadeRightInitial,
     fadeRightAnimate,
 } from "../utils/animation-settings";
+import SeoTags from "../components/reusable/seo-tags/SeoTags";
 
 const Home = ({ data, posts }) => {
     const featuredProjects = posts
@@ -21,6 +22,10 @@ const Home = ({ data, posts }) => {
 
     return (
         <Container>
+            <SeoTags
+                metaTitle={data.acf.meta_title}
+                metaDescription={data.acf.meta_description}
+            />
             <motion.div
                 initial={fadeRightInitial}
                 animate={fadeRightAnimate}

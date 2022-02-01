@@ -4,6 +4,7 @@ import PortfolioContent from "../../components/reusable/portfolio-content/Portfo
 import { baseUrl } from "../../utils/general";
 import Container from "@/components/reusable/Container";
 import Promise from "promise";
+import SeoTags from "../../components/reusable/seo-tags/SeoTags";
 
 const Portfolio = ({ posts, cats, data }) => {
     const router = useRouter();
@@ -28,6 +29,10 @@ const Portfolio = ({ posts, cats, data }) => {
 
     return (
         <Container>
+            <SeoTags
+                metaTitle={data.acf.meta_title}
+                metaDescription={data.acf.meta_description}
+            />
             <PortfolioContent
                 title={data?.acf?.main_header && data.acf.main_header}
                 cats={cats}

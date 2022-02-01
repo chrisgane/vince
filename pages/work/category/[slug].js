@@ -3,6 +3,7 @@ import PortfolioContent from "../../../components/reusable/portfolio-content/Por
 import { useRouter } from "next/router";
 import { baseUrl } from "utils/general";
 import Container from "@/components/reusable/Container";
+import SeoTags from "@/components/reusable/seo-tags/SeoTags";
 
 const Portfolio = ({ cats, posts, currentCat }) => {
     const router = useRouter();
@@ -24,9 +25,10 @@ const Portfolio = ({ cats, posts, currentCat }) => {
             };
         }
     }, []);
-
+    console.log(currentCat);
     return (
         <Container>
+            <SeoTags metaTitle={`${currentCat.name} | Vince`} />
             <PortfolioContent
                 title={currentCat.name}
                 cats={cats}

@@ -8,6 +8,7 @@ import SearchResults from "@/components/reusable/SearchResults";
 import Container from "../components/reusable/Container";
 import Grid from "../components/reusable/grid/Grid";
 import ProjectCard from "@/components/reusable/project-card/ProjectCard";
+import SeoTags from "../components/reusable/seo-tags/SeoTags";
 
 const initialMotionSettings = {
     opacity: 0,
@@ -75,6 +76,7 @@ const Search = () => {
                 },
             }}
         >
+            <SeoTags metaTitle="Search Results | Vince" />
             <Container>
                 {searchLoading && (
                     <div className="text-4xl absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin">

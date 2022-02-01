@@ -2,6 +2,7 @@ import React from "react";
 import Obfuscate from "react-obfuscate";
 import { motion } from "framer-motion";
 import Container from "../components/reusable/Container";
+import SeoTags from "../components/reusable/seo-tags/SeoTags";
 import {
     fadeRightExit,
     fadeRightInitial,
@@ -17,6 +18,7 @@ const Contact = () => {
 
     return (
         <>
+            <SeoTags metaTitle="Contact | Vince" />
             <motion.div
                 initial={fadeRightInitial}
                 animate={fadeRightAnimate}

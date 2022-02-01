@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import SeoTags from "../components/reusable/seo-tags/SeoTags";
 import {
     fadeRightExit,
     fadeRightInitial,
@@ -100,6 +101,8 @@ const About = ({ data }) => {
             animate={fadeRightAnimate}
             exit={fadeRightExit}
         >
+            <SeoTags metaTitle="Terms Of Use | Vince" />
+
             <div className="w-full max-w-4xl mx-auto my-16">
                 <div dangerouslySetInnerHTML={{ __html: html }} />
             </div>

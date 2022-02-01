@@ -20,7 +20,7 @@ const SearchForm = ({ isWhite = false, big = false, className = "" }) => {
     return (
         <motion.div
             className={`w-56 border flex flex-row items-center justify-start text-xs rounded-full mt-2 px-1 py-1 ${className} ${
-                big && "w-full"
+                big && "w-full pl-3"
             }`}
             initial={fadeUpInitial}
             animate={fadeUpAnimateDefault}
@@ -50,7 +50,7 @@ const SearchForm = ({ isWhite = false, big = false, className = "" }) => {
                         });
                     }
                 }}
-                className={`bg-transparent ml-2 outline-none ${color} ${
+                className={`search-input text-base bg-transparent ml-2 outline-none ${color} ${
                     big && "py-3"
                 }`}
                 placeholder="Search"

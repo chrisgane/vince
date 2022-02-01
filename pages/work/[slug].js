@@ -18,16 +18,20 @@ const Portfolio = ({ posts, project }) => {
     if (!router.isFallback && !project) {
         return <Error statusCode={404} />;
     }
-    console.log(project);
+
+    const getSeoTitle = () => {
+        if (project?.acf.meta_title && project.acf.meta_title !== "") {
+            return project?.acf.meta_title;
+        } else if (project?.title) {
+            return project.title.rendered + " | Vince";
+        }
+    };
+
     return (
         <>
             <SeoTags
-                metaTitle={
-                    project.acf.meta_title
-                        ? project.acf.meta_title
-                        : project.title?.rendered + " | Vince"
-                }
-                metaDescription={project.acf.meta_description}
+                metaTitle={getSeoTitle()}
+                metaDescription={project?.acf.meta_description}
             />
             <div className="content w-full">
                 <div className="w-full px-4 md:px-6 lg:px-10 xl:px-12 pt-0 h-auto flex flex-col items-center max-w-5xl justify-center mx-auto min-h-screen">

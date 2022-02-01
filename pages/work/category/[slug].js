@@ -25,7 +25,7 @@ const Portfolio = ({ cats, posts, currentCat }) => {
             };
         }
     }, []);
-    console.log(currentCat);
+
     return (
         <Container>
             <SeoTags metaTitle={`${currentCat.name} | Vince`} />

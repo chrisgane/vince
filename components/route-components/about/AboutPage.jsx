@@ -9,6 +9,7 @@ import {
 } from "utils/animation-settings";
 import AboutPageContent from "./AboutPageContent";
 import AboutPageParallax from "./AboutPageParallax";
+import Container from "../../reusable/Container";
 
 const AboutPage = ({ data }) => {
     useEffect(() => {
@@ -41,15 +42,17 @@ const AboutPage = ({ data }) => {
                 animate={fadeRightAnimate}
                 exit={fadeRightExit}
             >
-                <HeaderTitle
-                    title={data.title.rendered}
-                    image={data.acf.background_image}
-                />
-                <AboutPageContent
-                    content={data.acf.main_content}
-                    image={data.acf.main_image}
-                />
-                <AboutPageParallax sections={parallaxSections} />
+                <Container>
+                    <HeaderTitle
+                        title={data.title.rendered}
+                        image={data.acf.background_image}
+                    />
+                    <AboutPageContent
+                        content={data.acf.main_content}
+                        image={data.acf.main_image}
+                    />
+                    <AboutPageParallax sections={parallaxSections} />
+                </Container>
             </motion.div>
         )
     );

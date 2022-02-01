@@ -23,6 +23,7 @@ const touchStart = (e) => {
 
 const Slider = ({ settings, children, ...props }) => {
     let containerRef = useRef();
+    let sliderRef = useRef();
 
     useEffect(() => {
         if (containerRef.current) {
@@ -49,9 +50,19 @@ const Slider = ({ settings, children, ...props }) => {
         };
     });
 
+    const fixSlideTimer = () => {
+        sliderRef.current.slickPause();
+        sliderRef.current.slickPlay();
+    };
+
     return (
         <div ref={containerRef}>
-            <ReactSlick {...settings} {...props}>
+            <ReactSlick
+                {...settings}
+                onSwipe={fixSlideTimer}
+                {...props}
+                ref={sliderRef}
+            >
                 {children}
             </ReactSlick>
         </div>

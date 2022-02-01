@@ -20,6 +20,7 @@ const Slider2 = ({ posts }) => {
         autoplay: true,
         autoplaySpeed: 5000,
         draggable: true,
+        pauseOnDotsHover: true,
 
         beforeChange: function (currentSlide, nextSlide) {
             setCurrentSlide(nextSlide);

@@ -5,12 +5,12 @@ import { ParallaxBanner } from "react-scroll-parallax";
 const AboutPageParallax = ({ sections }) => {
     return (
         <ParallaxProvider>
-            {sections.map(({ image, content }, index) => (
+            {sections.map(({ image, title, description }, index) => (
                 <div key={index} className="grid grid-cols-1 lg:grid-cols-2">
                     <ParallaxBanner
                         layers={[
                             {
-                                image: image,
+                                image: image.url,
                                 amount: 0.3,
                             },
                         ]}
@@ -20,12 +20,10 @@ const AboutPageParallax = ({ sections }) => {
                             index % 2 !== 0 ? "lg:row-span-full" : ""
                         }`}
                     >
-                        <div
-                            className="aboutContent text-center max-w-2xl m-auto"
-                            dangerouslySetInnerHTML={{
-                                __html: content,
-                            }}
-                        />
+                        <div className="aboutContent text-center max-w-2xl m-auto">
+                            <h3 className="uppercase">{title}</h3>
+                            <p>{description}</p>
+                        </div>
                     </div>
                 </div>
             ))}

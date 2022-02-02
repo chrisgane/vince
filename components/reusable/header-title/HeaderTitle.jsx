@@ -4,7 +4,7 @@ const HeaderTitle = ({ title, image }) => {
     return (
         <div
             data-aos="fade-up"
-            className="w-full h-screen flex justify-center items-center -mt-28 "
+            className="header-title w-full flex justify-center items-center"
             style={{
                 backgroundImage: `url(${image})`,
                 backgroundPosition: "center center",

@@ -16,25 +16,6 @@ const AboutPage = ({ data }) => {
         AOS.init();
     }, []);
 
-    const parallaxSections = [
-        {
-            content: data.acf.parallax_content_1,
-            image: data.acf.parallax_img_1,
-        },
-        {
-            content: data.acf.parallax_content_2,
-            image: data.acf.parallax_img_2,
-        },
-        {
-            content: data.acf.parallax_content_3,
-            image: data.acf.parallax_img_3,
-        },
-        {
-            content: data.acf.parallax_content_4,
-            image: data.acf.parallax_img_4,
-        },
-    ];
-
     return (
         data && (
             <motion.div
@@ -42,17 +23,17 @@ const AboutPage = ({ data }) => {
                 animate={fadeRightAnimate}
                 exit={fadeRightExit}
             >
+                <HeaderTitle
+                    title={data.title.rendered}
+                    image={data.acf.background_image}
+                />
                 <Container>
-                    <HeaderTitle
-                        title={data.title.rendered}
-                        image={data.acf.background_image}
-                    />
                     <AboutPageContent
                         content={data.acf.main_content}
                         image={data.acf.main_image}
                     />
-                    <AboutPageParallax sections={parallaxSections} />
                 </Container>
+                <AboutPageParallax sections={data.acf.parallax_section} />
             </motion.div>
         )
     );

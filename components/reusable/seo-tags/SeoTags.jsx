@@ -6,7 +6,7 @@ import { domain } from "utils/general";
 const SeoTags = ({
     metaTitle = "Vince",
     metaDescription,
-    metaImage = `${domain}vince-sm.png`,
+    metaImage = `${domain}/vince-sm.png`,
 }) => {
     const router = useRouter();
     const url = domain + router.asPath;

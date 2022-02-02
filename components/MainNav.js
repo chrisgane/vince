@@ -29,8 +29,8 @@ const MainNav = () => {
             }}
             exit={{
                 ...fadeUpExitDefault,
-                transtion: {
-                    ...fadeUpAnimateDefault.transition,
+                transition: {
+                    ...fadeUpExitDefault.transition,
                     duration: 0.4,
                 },
             }}

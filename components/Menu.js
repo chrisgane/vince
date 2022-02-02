@@ -6,6 +6,7 @@ import MenuFooter from "./MenuFooter";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchForm from "./SearchForm";
 import { VscChromeClose } from "react-icons/vsc";
+import Image from "next/image";
 
 const Menu = () => {
     const { menuOpen, setMenuOpen } = useTheme();
@@ -43,44 +44,31 @@ const Menu = () => {
             >
                 <VscChromeClose className="ml-2 text-2xl lg:text-4xl" />
             </motion.div>
-            <motion.div
-                className="z-40 absolute top-0 mt-5 left-1/2 transform -translate-x-1/2"
-                initial={{ opacity: 0 }}
-                animate={{
-                    opacity: 1,
-                    transition: { delay: 0.9 },
-                }}
-                exit={{ opacity: 0 }}
-            >
-                <Link href="/">
-                    <a>
-                        <img
-                            src={`/vince-logo-white.svg`}
-                            className="w-32 lg:w-40 z-40"
-                        />
-                    </a>
-                </Link>
-            </motion.div>
-            {menuOpen && (
-                <motion.div
-                    className="absolute top-0 mt-5 left-1/2  transform -translate-x-1/2"
-                    initial={{ opacity: 0 }}
-                    animate={{
-                        opacity: 1,
-                        transition: { delay: 0.4 },
-                    }}
-                    exit={{ opacity: 0 }}
-                >
-                    <Link href="/">
-                        <a>
-                            <img
-                                src={`/vince-logo-white.svg`}
-                                className="w-32 lg:w-40 z-30"
-                            />
-                        </a>
-                    </Link>
-                </motion.div>
-            )}
+            <AnimatePresence exitBeforeEnter>
+                {menuOpen && (
+                    <motion.div
+                        className="absolute top-0 mt-5 left-1/2  transform -translate-x-1/2"
+                        initial={{ opacity: 0 }}
+                        animate={{
+                            opacity: 1,
+                            transition: { delay: 0.4 },
+                        }}
+                        exit={{ opacity: 0 }}
+                    >
+                        <Link href="/">
+                            <a>
+                                <Image
+                                    src={`/vince-logo-white.svg`}
+                                    className="w-32 lg:w-40 z-40"
+                                    width={170}
+                                    height={52}
+                                    alt="Vince Logo"
+                                />
+                            </a>
+                        </Link>
+                    </motion.div>
+                )}
+            </AnimatePresence>
             <div className="w-full max-w-6xl  px-10 flex flex-col sm:flex-row  flex-nowrap justify-between  text-white z-40">
                 <AnimatePresence exitBeforeEnter>
                     {menuOpen && (

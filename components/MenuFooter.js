@@ -28,7 +28,7 @@ const MenuFooter = () => {
             }}
             exit={{
                 ...fadeUpExitDefault,
-                transtion: {
+                transition: {
                     ...fadeUpExitDefault.transition,
                     duration: 0.4,
                 },

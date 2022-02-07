@@ -95,10 +95,11 @@ export const getStaticProps = async (ctx) => {
     const posts = await portfolioRes.json();
 
     const currentPost = posts.filter((item) => item.slug === ctx.params.slug);
+    const restPosts = posts.filter((item) => item.slug !== ctx.params.slug);
 
     return {
         props: {
-            posts,
+            posts: restPosts,
             project: currentPost[0] || null,
         },
         revalidate: 10,

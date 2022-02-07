@@ -5,9 +5,9 @@ import Title from "@/components/reusable/Title";
 import Container from "@/components/reusable/Container";
 import RestProjects from "@/components/main/rest-projects/RestProjects";
 import {
-    fadeRightExit,
-    fadeRightInitial,
-    fadeRightAnimate,
+    fadeUpExitDefault,
+    fadeUpAnimateDefault,
+    fadeUpInitial,
 } from "../utils/animation-settings";
 import SeoTags from "../components/reusable/seo-tags/SeoTags";
 
@@ -27,9 +27,9 @@ const Home = ({ data, posts }) => {
                 metaDescription={data.acf.meta_description}
             />
             <motion.div
-                initial={fadeRightInitial}
-                animate={fadeRightAnimate}
-                exit={fadeRightExit}
+                initial={fadeUpInitial}
+                animate={fadeUpAnimateDefault}
+                exit={fadeUpExitDefault}
                 className="pb-16 "
             >
                 <Title>{data?.acf?.main_header && data.acf.main_header}</Title>

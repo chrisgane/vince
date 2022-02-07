@@ -54,6 +54,7 @@ const Menu = () => {
                             transition: { delay: 0.4 },
                         }}
                         exit={{ opacity: 0 }}
+                        style={{ marginLeft: "5px", maxWidth: "160px" }}
                     >
                         <Link href="/">
                             <a>

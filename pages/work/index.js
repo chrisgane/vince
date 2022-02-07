@@ -61,7 +61,7 @@ export const getStaticProps = async () => {
             cats: categoriesData,
             data: workPageData,
         },
-        revalidate: 600,
+        revalidate: 10,
     };
 };
 

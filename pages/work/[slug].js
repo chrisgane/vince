@@ -101,7 +101,7 @@ export const getStaticProps = async (ctx) => {
             posts,
             project: currentPost[0] || null,
         },
-        revalidate: 600,
+        revalidate: 10,
     };
 };
 

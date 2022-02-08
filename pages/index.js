@@ -1,5 +1,5 @@
 import React from "react";
-import Head from "next/Head";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import Slider2 from "../components/Slider2";
 import Title from "@/components/reusable/Title";

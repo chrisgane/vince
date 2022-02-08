@@ -1,4 +1,5 @@
 import React from "react";
+import Head from "next/Head";
 import { motion } from "framer-motion";
 import Slider2 from "../components/Slider2";
 import Title from "@/components/reusable/Title";
@@ -26,11 +27,17 @@ const Home = ({ data, posts }) => {
                 metaTitle={data.acf.meta_title}
                 metaDescription={data.acf.meta_description}
             />
+            <Head>
+                <link
+                    rel="stylesheet"
+                    href="https://use.typekit.net/ozc1vaf.css"
+                ></link>
+            </Head>
             <motion.div
                 initial={fadeUpInitial}
                 animate={fadeUpAnimateDefault}
                 exit={fadeUpExitDefault}
-                className="pb-16 "
+                className="pb-16 home"
             >
                 <Title>{data?.acf?.main_header && data.acf.main_header}</Title>
                 <Slider2 posts={featuredProjects} />

@@ -13,6 +13,7 @@ const ProjectCard = ({ project }) => {
             <a>
                 <div
                     data-aos="fade-up"
+                    data-aos-offset="10"
                     className="flex flex-col justify-center"
                 >
                     <div className="overflow-hidden">

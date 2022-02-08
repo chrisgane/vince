@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import Link from "next/link";
 import Obfuscate from "react-obfuscate";
-import AOS from "aos";
 import Container from "./reusable/Container";
 import SearchForm from "./SearchForm";
 import { motion } from "framer-motion";
@@ -19,9 +17,6 @@ const Footer = () => {
         { name: "Terms of use", url: "/terms" },
     ];
     const headerStyle = "font-semibold text-3xl text-white mb-12";
-    useEffect(() => {
-        AOS.init();
-    }, []);
 
     const fullYear = () => {
         return new Date().getFullYear();

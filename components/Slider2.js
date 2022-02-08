@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import AOS from "aos";
 import Slider from "./reusable/Slider";
 
 const Slider2 = ({ posts }) => {
@@ -50,10 +49,6 @@ const Slider2 = ({ posts }) => {
             e.preventDefault();
         }
     };
-
-    useEffect(() => {
-        AOS.init();
-    }, []);
 
     return (
         <section className="overflow-hidden pb-10 mt-10 relative">

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useRouter } from "next/router";
-import AOS from "aos";
 import Title from "../../components/reusable/Title";
 import MoreProjects from "../../components/main/more-projects/MoreProjects";
 import Error from "next/error";
@@ -10,10 +9,6 @@ import SeoTags from "@/components/reusable/seo-tags/SeoTags";
 
 const Portfolio = ({ posts, project }) => {
     const router = useRouter();
-
-    useEffect(() => {
-        AOS.init();
-    }, [router]);
 
     if (!router.isFallback && !project) {
         return <Error statusCode={404} />;

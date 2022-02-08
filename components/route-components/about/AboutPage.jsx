@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HeaderTitle from "../../reusable/header-title/HeaderTitle";
-import AOS from "aos";
 import { motion } from "framer-motion";
 import {
     fadeRightInitial,
@@ -12,10 +11,6 @@ import AboutPageParallax from "./AboutPageParallax";
 import Container from "../../reusable/Container";
 
 const AboutPage = ({ data }) => {
-    useEffect(() => {
-        AOS.init();
-    }, []);
-
     return (
         data && (
             <motion.div

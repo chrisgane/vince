@@ -11,6 +11,7 @@ import "aos/dist/aos.css";
 
 function MyApp({ Component, pageProps }) {
     const router = useRouter();
+
     return (
         <ThemeProvider>
             <Layout>
